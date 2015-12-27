@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="utf-8">
+        
+        <style>
+            #container {
+                position: relative;
+                margin: auto;
+                width: 800px;
+                height: 650px;
+                overflow: hidden;
+                background-color: none;
+                font-family: sans-serif;
+            }
+            
+            .intro {
+                margin-top: -1px;
+                width : 780px;
+                height: 100px;
+                font-size: 80px;  
+                text-align: center;
+                font-family: sans-serif;
+                line-height: 80px;
+                padding-top:30px;
+            }
+            
+            #agi {
+                margin-top: 170px;
+                width : 780px;
+                height: 100px;
+                font-size: 80px;  
+                text-align: center;
+                font-family: sans-serif;
+                line-height: 80px;
+                padding-top:30px;
+            }
+            
+            #copy {
+                margin-top: 170px;
+                text-align: center;
+                font-family: sans-serif;
+            }
+            
+            a{
+                color: black;
+                text-decoration: none;
+                font-family: sans-serif;
+            }
+            
+            .link:hover{
+                text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;
+                color: white;
+                text-decoration: none;
+                font-family: sans-serif;
+            }
+            
+            .link:link{
+                color: black;
+                text-decoration: none;
+                font-family: sans-serif;
+            }
+            
+            .link:visit{
+                color: white;
+                text-decoration: none;
+                font-family: sans-serif;
+            }
+            
+            #imageA{
+                font-family: sans-serif;
+                position: fixed;
+                top:-100px; 
+                left:0px;
+                transform: scale(0.7);
+                z-index: -1;
+                visibility: hidden;
+            }
+            
+            #imageB{
+                font-family: sans-serif;
+                position: fixed;
+                top:-100px; 
+                left:0px;
+                transform: scale(1);
+                z-index: -1;
+                visibility: hidden;
+            }
+        </style>
+        <title>HISTORY OF A.G.I and H.C.I</title>
+    </head>
+    
+    <body>
+        <div id="container">
+            <div id="imageA"><img src="img/2016/thumb.png"></div>
+            <div id="imageB"><img src="img/hci/all.png"></div>
+            <div id="agi" class="intro"><strong><a id="linkA" class="link" href="agi_timeline.html">History of A.G.I</a></strong></div>
+            <div id="hci" class="intro"><strong><a id="linkB" class="link" href="hci_timeline.html">History of H.C.I</a></strong></div>
+            <div id="copy"><strong><a target="blank" href="http://www.parkseyeon.com/">copyrights © 2015 Se Yeon Park<br>All rights are reserved.</a></strong></div>
+        </div>
+    </body>
+    
+    <script>
+        var agi = document.getElementById('linkA');
+        var agiA = document.getElementById('agi');
+        var imageA = document.getElementById('imageA');
+        var changeAgiOver = function(e){
+            imageA.style.visibility='visible';
+            imageA.style.left=(e.pageX-600)+'px';
+            imageA.style.top=(e.pageY-400)+'px';
+            agi.textContent='Alliance Graphiue Internationable';
+            agi.style.fontSize = '48px'; 
+            agi.style.textShadow= '1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black';
+            agi.style.color = 'white';  
+          
+        };
+        
+        var changeAgiOut = function(){
+            imageA.style.visibility='hidden';
+            agi.textContent='History of A.G.I';
+            agi.style.fontSize = '80px'; 
+            agi.style.color = 'black';
+            agi.style.textShadow= 'none';
+            agi.style.fontWeight='bold';
+        };
+    
+        agiA.addEventListener('mouseover',changeAgiOver);
+        agiA.addEventListener('mouseout',changeAgiOut);
+      
+        
+        var hci = document.getElementById('linkB');
+        var hciA = document.getElementById('hci');
+        var imageB = document.getElementById('imageB');
+        var changeHciOver = function(e){
+            imageB.style.visibility='visible';
+            imageB.style.left=(e.pageX-400)+'px';
+            imageB.style.top=(e.pageY-250)+'px';
+            hci.textContent='Human Computer Interaction';
+            hci.style.fontSize = '48px'; 
+            hci.style.textShadow= '1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black';
+            hci.style.color = 'white';  
+          
+        };
+        
+        var changeHciOut = function(){
+            imageB.style.visibility='hidden';
+            hci.textContent='History of H.C.I';
+            hci.style.fontSize = '80px'; 
+            hci.style.color = 'black';
+            hci.style.textShadow= 'none';
+            hci.style.fontWeight='bold';
+        };
+    
+        hciA.addEventListener('mouseover',changeHciOver);
+        hciA.addEventListener('mouseout',changeHciOut);
+        
+    </script>
+</html>
