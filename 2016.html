@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            #box {
+                font-family: sans-serif;
+                position: relative;
+                margin: auto;
+                width: 1200px;
+                height: 650px;
+                overflow: hidden;
+                background-color: none;
+            }
+
+            #imageFirst {
+                font-family: sans-serif;
+                position: absolute;
+                left: 200px;
+                top: 120px;
+                width: 200px;
+                height: 200px;
+                line-height: 50px;
+                background-color: none;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/2016/Pai.jpg);
+                background-size: 200px 200px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageSecond {
+                font-family: sans-serif;
+                position: absolute;
+                left: 280px;
+                top: 240px;
+                width: 270px;
+                height: 250px;
+                line-height: 50px;
+                background-color: none;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/2016/ahn.png);
+                background-size: 270px 250px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageThird {
+                font-family: sans-serif;
+                position: absolute;
+                left: 575px;
+                top: 110px;
+                width: 350px;
+                height: 200px;
+                line-height: 50px;
+                background-color: none;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/2016/2016-1.jpg);
+                background-size: 350px 200px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageFourth {
+                font-family: sans-serif;
+                position: absolute;
+                left: 490px;
+                top: 360px;
+                width: 350px;
+                height: 200px;
+                line-height: 50px;
+                background-color: none;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/1950s/1950_4.jpeg);
+                background-size: 350px 200px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageFifth {
+                font-family: sans-serif;
+                position: absolute;
+                left: 750px;
+                top: 325px;
+                width: 300px;
+                height: 200px;
+                line-height: 50px;
+                background-color: none;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/1950s/1950_5.jpg);
+                background-size: 300px 200px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #text1950{
+                font-family: sans-serif;
+                margin-left: 450px;
+                margin-top: 30px;
+                width:500px; 
+                font-size:24px;
+                color: gray;
+                font-weight:800;
+                line-height: 24px;
+            }
+            
+            #first{
+                font-family: sans-serif;
+                margin-top: 180px;
+                text-align: center;
+                font-size:60px;
+                line-height: 72px;
+                color:gray;
+                font-weight:700;
+                letter-spacing: 3px;
+            }
+            
+            #copy {
+                font-family: sans-serif;
+                position: fixed;
+                margin-top: 230px;
+                margin-left: 480px;
+                text-align: center;   
+            }
+            
+            #copy:hover{
+                font-family: sans-serif;
+                color:black;   
+            }
+            
+            a{
+                font-family: sans-serif;
+                text-decoration: none; 
+                color: black;
+            }
+            
+            .years{
+                font-family: sans-serif;
+                margin-left:0px;
+                margin-top: -22px;
+                line-height: 25px;
+                color:black;
+                font-size:16px;
+                font-weight: 800; 
+                border: 2px solid black;
+                width:40px;
+                height:20px;
+                background-color: white;
+                box-shadow: 2px 2px 4px #888888; 
+            }
+            
+            .years:hover{
+                font-family: sans-serif;
+                color:blue; 
+                border: 2px solid blue;
+            } 
+            
+            .transparency {
+                font-family: sans-serif;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.3);
+                transition: opacity 500ms;
+                visibility: hidden;
+                opacity: 0;
+            }
+            
+            .transparency:target {
+                font-family: sans-serif;
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .frame {
+                font-family: sans-serif;
+                margin: 70px auto;
+                padding: 40px;
+                background: white;
+                width: 30vw;
+                height: 70vh;
+                position: relative;
+                transition: all 1s ease-in-out;
+                box-shadow: 5px 5px 10px black;
+                border: 4px solid blue;
+            }
+
+            .frame h2 {
+                font-family: sans-serif;
+                margin-top: 0;
+                color: blue;
+                font-family: Tahoma, Arial, sans-serif;
+            }
+            .frame .close {
+                font-family: sans-serif;
+                position: absolute;
+                top: 20px;
+                right: 30px;
+                transition: all 200ms;
+                font-size: 30px;
+                font-weight: bold;
+                text-decoration: none;
+                color: lightgray;
+            }
+            
+            .frame .close:hover {
+                font-family: sans-serif;
+                color: blue;
+            }
+            
+            .frame .content {
+                font-family: sans-serif;
+                overflow: scroll;
+                height: 40%;
+                font-size: 10pt;
+                line-height: 18pt;
+                margin-top: 2vw;
+                font-weight: 700;
+                color:blue;
+            }
+            
+            .frameimg {
+                font-family: sans-serif;
+                width: 30vw;
+                height: 15vw;
+                overflow: hidden;
+                position: relative;
+            }
+            
+            .listA{
+                font-family: sans-serif;
+                margin-top: -1px;
+                width:50px;
+                height:24px;
+                border: 1.5px solid black;
+                font-size: 14px;
+                padding-top: 6px;
+                padding-left: 5px;
+                font-weight: 600;
+                background-color: none;
+                
+            }
+            
+            .list{
+                font-family: sans-serif;
+                margin-top: -1px;
+                width:120px;
+                height:24px;
+                border: 1.5px solid black;
+                font-size: 14px;
+                padding-top: 6px;
+                padding-left: 5px;
+                font-weight: 600;
+                background-color: none;
+                
+            }
+            
+            #menu{
+                font-family: sans-serif;
+                margin-top: 2px;
+                font-weight: 800;
+            }
+            
+            #bar{
+                font-family: sans-serif;
+                position: fixed;
+                border:1px solid black;
+                background-color: white;
+                margin-left: 950px;
+                margin-top: -335px;
+                padding: 5px;   
+                width: 57px;
+                height:217px;
+                z-index: 1px; 
+                box-shadow: 1px 1px 1px #888888, 1px -1px 1px #888888;
+                background-color: rgba(255,255,255,0.75);
+            }
+            
+            #barA{
+                font-family: sans-serif;
+                position: fixed;
+                border:1px solid black;
+                background-color: white;
+                margin-left: 800px;
+                margin-top: 61px;
+                padding: 5px;   
+                width: 128px;
+                height:128px;
+                z-index: 1px; 
+                box-shadow: 1px 1px 1px #888888, 1px -1px 1px #888888;
+                background-color: rgba(255,255,255,0.75);
+            }
+            
+            .mlink:hover{
+                font-family: sans-serif;
+                color: blue;
+            }
+            
+            #script{
+                font-family: sans-serif;
+                margin-left: 20px;
+                margin-top: -100px;
+                padding: 10px;
+                position: fixed;
+                overflow: scroll;
+                width:250px;
+                height:300px;
+                border: 1px solid black;
+                background-color: rgba(255,255,255,0.75);
+                box-shadow: 2px 2px 4px #888888;
+            }
+            
+            .arrow{
+                font-family: sans-serif;
+                display: inline-block;
+                position: relative;
+                text-align: center;
+                margin-top: 20px;
+                color:lightgray;
+                font-size:18px;
+                font-weight: 700
+            }
+            
+            .arrow:hover{
+                font-family: sans-serif;
+                color: blue;   
+            }
+            
+            #agi{
+                font-family: sans-serif;
+                margin-top: 20px;
+                margin-left: 45px; 
+                position: fixed;
+                font-weight: 800;
+                font-size: 36px;
+                line-height: 40px;
+            }
+            
+            #agia{
+                font-family: sans-serif;
+                margin-top: 560px;
+                margin-left: 1120px; 
+                position: fixed;
+                font-weight: 800;
+                font-size: 48px;
+                line-height: 40px;
+                transform:  rotate(270deg);
+            }
+            
+            #yearSecond{
+                font-family: sans-serif;
+                width:100px;   
+            }
+        </style>
+        <title>HISTORY OF A.G.I and H.C.I</title>
+    </head>
+    <body>
+        <div id="agi">History<br>Of</div>
+        <div id="agia">A.G.I</div>
+        <div id="box">
+            <div class="year" id="first">2016 : Seoul<br>In DDP by PaTI</a></div>
+            <div id="text1950">Membership : Sang Soo Ahn</div>
+            <div class="images" id="imageFirst"><a target= "blank" href="http://www.pati.kr/"><div class="years" id="yearFirst">PaTI</div></a></div>
+            <div class="images" id="imageSecond"><a target= "blank" href="http://ssahn.com/"><div class="years" id="yearSecond">SangSoo Ahn</div></a></div>
+            <div class="images" id="imageThird"><a target= "blank" href="http://www.ddp.or.kr/MA010001/getInitPage.do"><div class="years" id="yearThird">DDP</div></a></div>
+            <div id="copy"><strong><a id="copyA" target="blank" href="http://www.parkseyeon.com/">copyrights © 2015 Se Yeon Park<br>All rights are reserved.</a></strong></div>
+            <div id="script">
+            <h3>What Is A.G.I?</h3>    
+                Inwards
+
+The AGI unites the world's leading graphics designers and artists in a professional club of common interest and achievement. It is an élite club. Its members have been collectively responsible for the  identity design of most of the world's top corporations and institutions as well as for countless examples of globally known packaging, publications, illustration and posters. The AGI provides for friendship, mutual respect and the enjoyment of the company of the like-minded - even reassurance in the face of a sceptical world. Ideas and experiences are exchanged informally at periodic meetings and by letter, email and fax. All members may also attend the AGI Congress, which involves a more formal business and social agenda. A different country hosts the Congress each year and presents its own history, members' work and professional achievements in art, commerce and education.
+
+Outwards
+
+The role and importance of the AGI within the professional field of graphic design is clearly different from the existing national and international professional organisations. In recognition of this context, the AGI is also a platform for activity. It has a task to tell the world and change it. Through the relationships and interaction of its members, the AGI promotes graphic design in lectures, education and publishing. It encourages knowledge and understanding among the young and fosters contacts with other institutions, organisations and companies involved in graphic design.
+
+The AGI holds exhibitions of members work which are highly influential in disseminating new forms, techniques and ideas. There is a book publishing programme based on the thoughts and works of members. There are contacts with colleges and schools, government bodies and commercial institutes, all aimed at promoting graphic design and visual literacy.
+
+Backwards
+
+In the 1940s, commercial artists, mural makers, typographers, printmakers, art directors, illustrators and poster designers increasingly realised their common bonds, and the modern profession of graphic design began to be defined. In 1951, five graphic artists - two Swiss and three French - decided to formalise their relationship into some sort of association. Their idea was simply to share common interests and friendships across national and cultural borders.
+
+It was a notion that soon attracted leading exponents of the graphic arts from elsewhere in Europe and in the USA. In 1952 the Alliance Graphique Internationale was incorporated in Paris with 65 members from 10 countries. The first AGI exhibition was held in Paris in 1955 and in 1969 the headquarters moved from Paris to Zurich. Student seminars were introduced in 1979 and the first Young Professional AGI Congress was held in London in 1994.
+
+Forwards
+
+An explosion of global communications is changing the world. Powered by media like television and the internet, a common visual language is forming as symbols and images become the world's universal vernacular. The original members of the AGI were responsible for creating many elements of this new language. As the world turns, their successors - exponents of the traditional and the new media - are becoming members of the AGI themselves. Today there are around 370 from Africa, America, Australia, Asia, the Middle East and Europe - 32 countries in all.
+
+Membership of the AGI requires reputation and achievement of the highest order and commitment to the processes of visual learning and perception, unfettered by cultural differences. The AGI remains dedicated to the universal aspect of graphic design as a means of communication and information, and its ideals remain relevant to the new world of visual literacy which its members have helped to bring about.
+            </div>
+            <div id="bar">
+                <div id = "home" class="listA"><a class="mlink" href="agi_1950s.html">1950s</a></div>
+                <div id = "home" class="listA"><a class="mlink" href="agi_1960s.html">1960s</a></div>
+                <div id = "home" class="listA"><a class="mlink" href="agi_1970s.html">1970s</a></div>
+                <div id = "home" class="listA"><a class="mlink" href="agi_1980s.html">1980s</a></div>
+                <div id = "home" class="listA"><a class="mlink" href="agi_1990s.html">1990s</a></div>
+                <div id = "home" class="listA"><a class="mlink" href="agi_2000s.html">2000s</a></div>
+                <div id = "home" class="listA"><a class="mlink" href="2016.html">2016</a></div>
+            </div>
+        
+            <div id="barA">
+                <div id = "menu" class="list">MENU</div>
+                <div id = "home" class="list"><a class="mlink" href="agi_timeline.html">Timeline : A.G.I</a></div>
+                <div id = "home" class="list"><a class="mlink" href="hci_timeline.html">History of H.C.I</a></div>
+                <div id = "home" class="list"><a class="mlink" href="index.html">Home</a></div>
+            </div>
+        </div>
+    
+        <div id="frame1" class="transparency">
+            <div class="frame">
+                <h2>1952 : London</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-50px " src="img/1950s/1950_1.jpeg">
+                </div>
+                <div class="content">
+                    1952: London AGI Assembly. The Founding Fathers and the Invited New Members at their first Assembly. Beckman, Nathan Garamond, Him, Lewitt, Gauchat, Jean Colin, Mrs Garamond, Monnerat. Bühler, Erni, Brun, Heiri Steiner, Havinden, Picard Le Doux, Schleger, Herdeg, Keely.The founders and a number of ‘new members’ met again in London (1952), Paris (1953) and Basel/Zermatt (1954). In Basel they celebrated the very special local carnival, after which they travelled to Zermatt to enjoy a wonderful time in the mountains. This must have been the very start of a long AGI tradition: a General Assembly, a Congress and an interesting venue in which to enjoy them. In Zermatt a special committee was appointed to prepare and organize the first AGI Exhibition, held at the Louvre in 1955. Jean Carlu took over the presidency of AGI and was also in charge of the Paris exhibition.    
+                </div>
+                <a href="#frame2"><div class="arrow">></div></a>
+	       </div>
+        </div>
+    
+        <div id="frame2" class="transparency">
+            <div class="frame">
+                <h2>1954 : Basel</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; height:40vh; margin-top:-50px " src="img/1950s/1950_2.jpeg">
+                </div>
+                <div class="content">
+                    1954: Basel/Zermatt, AGI Assembly
+‘Art et Publicité dans le Monde’ was the title of that first AGI exhibition in the Musée des Arts Décoratifs on Rue de Rivoli. 74 designers from eleven countries took part, putting AGI on the world map. Numerous ministers and ambassadors from members’ countries attended the event. As was typical of the period, the poster was the dominating medium. Issue 58A of Walter Herdeg’s Graphis recorded the exhibition in detail. In addition to the members’ personal works, there were displays of work by AGI members for leading design-conscious companies such as Olivetti, Ciba and Larousse. Also in 1955, the Swedish designer Anders Beckman organized an AGI poster exhibition in the pavilions of the important design and industry show H55 in Helsingborg. Beckman created a city-wide corporate design programme for the occasion, in fact the first ever of its kind.   
+                </div>
+                <a href="#frame1"><div class="arrow"><</div></a>
+                <a href="#frame3"><div class="arrow">></div></a>
+	       </div>
+        </div>
+            
+        <div id="frame3" class="transparency">
+            <div class="frame">
+                <h2>1955 : Helsingborg</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-50px " src="img/1950s/1950_3.jpeg">
+                </div>
+                <div class="content">
+                    The Swedish member Anders Beckman arranged an AGI poster exhibition during the Industrial Fair H55 in Helsingborg, and designed for this manifestation a comprehensive event style. One of the earliest of its kind.
+ 
+
+AGI chose to expand its early reputation with two more exhibitions in the following years. London was the venue in 1956, organized by Ashley Havinden and designed by F.H.K. Henrion. There were no governmental subsidies this time, but solid support from major international companies, clients of the AGI members.
+                </div>
+                <a href="#frame2"><div class="arrow"><</div></a>
+                <a href="#frame4"><div class="arrow">></div></a>
+	       </div>
+                
+        </div>    
+           <div id="frame4" class="transparency">
+            <div class="frame">
+                <h2>1957 : Lausanne</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-50px " src="img/1950s/1950_4.jpeg">
+                </div>
+                <div class="content">
+                    A retrospective of the late Edward McKnight Kauffer (an American designer who had worked in England for most of his life) and work by the two Polish designers Jan Lenica and Henryk Tomaszewski and many Japanese, American and Italian designers gave this London show a more global spirit than the previous Paris exhibition, which was dominated by French and Swiss colleagues. In spite of the ‘local dialects’, this exhibition clearly demonstrated the common visual language of quality. London was followed by Lausanne, where the work of 67 AGI members was shown in 1957.    
+                    Fritz Bühler designed the catalogue and poster for the ‘Graphis 57’ exhibition in Lausanne, in which AGI participated. Bühler’s design was for a few years the official AGI emblem.
+                </div>
+                <a href="#frame3"><div class="arrow"><</div></a>
+                <a href="#frame5"><div class="arrow">></div></a>
+	       </div>    
+        </div> 
+               
+        </div>    
+           <div id="frame5" class="transparency">
+            <div class="frame">
+                <h2>1959 : The Belgian Coast</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-50px " src="img/1950s/1950_5.jpg">
+                </div>
+                <div class="content">
+                    The 1959 Knokke AGI assembly, on the Belgian coast, was a kind of philosophical turning point. Jacques Richez was the host for 20 members. In addition to a day tour to the old town of Bruges, it was a meeting with serious discussion of major professional, social and ethical issues. This time it was not only the work itself that was in the limelight; in Knokke, AGI talked about the men behind the work. Jacques and Heiri Steiner made themselves heard, as they would continue to do throughout their many years in AGI. Heiri had produced a paper on ‘The moral mission of AGI’. The Alliance should, in his words, tackle its true task of acting as a trustee of our profession. He pleaded that designers should have an independent position and attitude because, when they join an agency, they are lost to the profession. Discussing young designers, he wrote: ‘It is important for them to realize that our work generates something of higher value and makes it possible for designers to participate more fully in life. We might also perhaps be able to contribute to the human society of the future.’
+                </div>
+                <a href="#frame4"><div class="arrow"><</div></a>
+	       </div>    
+        </div>   
+               
+    </body>
+
+
+    <script>
+        var box = document.getElementById('box');
+        var imageFirst = document.getElementById('imageFirst');
+
+        var mDown = false;
+        var onMouseDown = function(e) {
+            if(e.target === imageFirst) {
+                mDown = true; 
+                imageFirst.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp = function(e) {
+            if(e.target === imageFirst) {
+                mDown = false; 
+                imageFirst.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageFirst) {
+                var rect = box.getBoundingClientRect();
+                imageFirst.style.left = (e.pageX - rect.left - 120) + 'px';
+                imageFirst.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+
+        window.addEventListener('mousedown', onMouseDown);
+        window.addEventListener('mouseup', onMouseUp);
+        window.addEventListener('mousemove', onMouseMove);
+        
+        /*-------------------------------------------------*/
+        
+        var imageSecond = document.getElementById('imageSecond');
+        var onMouseDown1 = function(e) {
+            if(e.target === imageSecond) {
+                mDown = true; 
+                imageSecond.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp1 = function(e) {
+            if(e.target === imageSecond) {
+                mDown = false; 
+                imageSecond.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove1 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageSecond) {
+                var rect = box.getBoundingClientRect();
+                imageSecond.style.left = (e.pageX - rect.left - 175) + 'px';
+                imageSecond.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown1);
+        window.addEventListener('mouseup', onMouseUp1);
+        window.addEventListener('mousemove', onMouseMove1);
+        
+        /*-------------------------------------------------*/
+        
+        var imageThird = document.getElementById('imageThird');
+        var onMouseDown2 = function(e) {
+            if(e.target === imageThird) {
+                mDown = true; 
+                imageThird.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp2 = function(e) {
+            if(e.target === imageThird) {
+                mDown = false; 
+                imageThird.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove2 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageThird) {
+                var rect = box.getBoundingClientRect();
+                imageThird.style.left = (e.pageX - rect.left - 175) + 'px';
+                imageThird.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown2);
+        window.addEventListener('mouseup', onMouseUp2);
+        window.addEventListener('mousemove', onMouseMove2);
+        
+        /*-------------------------------------------------*/
+        
+        var imageFourth = document.getElementById('imageFourth');
+        var onMouseDown3 = function(e) {
+            if(e.target === imageFourth) {
+                mDown = true; 
+                imageFourth.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp3 = function(e) {
+            if(e.target === imageFourth) {
+                mDown = false; 
+                imageFourth.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove3 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageFourth) {
+                var rect = box.getBoundingClientRect();
+                imageFourth.style.left = (e.pageX - rect.left - 175) + 'px';
+                imageFourth.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown3);
+        window.addEventListener('mouseup', onMouseUp3);
+        window.addEventListener('mousemove', onMouseMove3);
+        
+        /*-------------------------------------------------*/
+        
+        var imageFifth = document.getElementById('imageFifth');
+        var onMouseDown4 = function(e) {
+            if(e.target === imageFifth) {
+                mDown = true; 
+                imageFifth.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp4 = function(e) {
+            if(e.target === imageFifth) {
+                mDown = false; 
+                imageFifth.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove4 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageFifth) {
+                var rect = box.getBoundingClientRect();
+                imageFifth.style.left = (e.pageX - rect.left - 175) + 'px';
+                imageFifth.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown4);
+        window.addEventListener('mouseup', onMouseUp4);
+        window.addEventListener('mousemove', onMouseMove4);
+    </script>
+</html>

@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            #box {
+                font-family: sans-serif;
+                position: relative;
+                margin: auto;
+                width: 1200px;
+                height: 650px;
+                overflow: hidden;
+                background-color: none;
+            }
+
+            #imageFirst {
+                font-family: sans-serif;
+                position: absolute;
+                left: 100px;
+                top: 110px;
+                width: 220px;
+                height: 180px;
+                line-height: 50px;
+                background-color: white;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/hci/bush_1.png);
+                background-size: 220px 180px;
+                box-shadow: 8px 8px 10px #888888;
+            }
+            
+            #imageSecond {
+                font-family: sans-serif;
+                position: absolute;
+                left: 180px;
+                left: 300px;
+                top: 240px;
+                width: 180px;
+                height: 220px;
+                line-height: 50px;
+                background-color: white;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/hci/nobert.png);
+                background-size: 180px 220px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageThird {
+                font-family: sans-serif;
+                position: absolute;
+                left: 478px;
+                top: 110px;
+                width: 210px;
+                height: 250px;
+                line-height: 50px;
+                background-color: white;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/hci/lick.png);
+                background-size: 210px 250px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageFourth {
+                font-family: sans-serif;
+                position: absolute;
+                left: 400px;
+                top: 340px;
+                width: 230px;
+                height: 250px;
+                line-height: 50px;
+                background-color: white;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/hci/engel.png);
+                background-size: 230px 250px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageFifth {
+                font-family: sans-serif;
+                position: absolute;
+                left: 660px;
+                top: 225px;
+                width: 250px;
+                height: 220px;
+                line-height: 50px;
+                background-color: white;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/hci/ted.png);
+                background-size: 250px 220px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageSixth {
+                font-family: sans-serif;
+                position: absolute;
+                left: 620px;
+                top: 425px;
+                width: 300px;
+                height: 200px;
+                line-height: 50px;
+                background-color: white;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/hci/ellen.png);
+                background-size: 300px 200px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageSeventh {
+                font-family: sans-serif;
+                position: absolute;
+                left: 820px;
+                top: 295px;
+                width: 180px;
+                height: 230px;
+                line-height: 50px;
+                background-color: white;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/hci/ellen.png);
+                background-size: 180px 230px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #text1960{
+                font-family: sans-serif;
+                margin-left: 330px;
+                margin-top: 30px;
+                width:600px;  
+                color: gray;
+                font-weight:600;
+                line-height: 24px;
+            }
+            
+            #first{
+                font-family: sans-serif;
+                margin-top: 180px;
+                text-align: center;
+                font-size:36px;
+                line-height: 36px;
+                color:gray;
+                font-weight:700;
+                letter-spacing: 3px;
+            }
+            
+            #copy {
+                font-family: sans-serif;
+                position: fixed;
+                margin-top: 230px;
+                margin-left: 480px;
+                text-align: center;   
+            }
+            
+            #copy:hover{
+                font-family: sans-serif;
+                color:black;   
+            }
+            
+            a{
+                font-family: sans-serif;
+                text-decoration: none; 
+                color: black;
+            }
+            
+            .years{
+                font-family: sans-serif;
+                margin-left:-2px;
+                margin-top: -15px;
+                line-height: 23px;
+                color:black;
+                font-size:16px;
+                font-weight: 800; 
+                border: 2px solid black;
+                width:80px;
+                height:20px;
+                background-color: white;
+                box-shadow: 2px 2px 4px #888888; 
+            }
+            
+            .years:hover{
+                font-family: sans-serif;
+                color:blue; 
+                border: 2px solid blue;
+            } 
+            
+            .images{
+                font-family: sans-serif;
+                border: 2px solid black; 
+            }
+            
+            
+            .transparency {
+                font-family: sans-serif;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.3);
+                transition: opacity 500ms;
+                visibility: hidden;
+                opacity: 0;
+            }
+            
+            .transparency:target {
+                font-family: sans-serif;
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .frame {
+                font-family: sans-serif;
+                margin: 70px auto;
+                padding: 40px;
+                background: white;
+                width: 30vw;
+                height: 70vh;
+                position: relative;
+                transition: all 1s ease-in-out;
+                box-shadow: 5px 5px 10px black;
+                border: 4px solid blue;
+            }
+
+            .frame h2 {
+                font-family: sans-serif;
+                margin-top: 0;
+                color: blue;
+                font-family: Tahoma, Arial, sans-serif;
+            }
+            .frame .close {
+                font-family: sans-serif;
+                position: absolute;
+                top: 20px;
+                right: 30px;
+                transition: all 200ms;
+                font-size: 30px;
+                font-weight: bold;
+                text-decoration: none;
+                color: lightgray;
+            }
+            
+            .frame .close:hover {
+                font-family: sans-serif;
+                color: blue;
+            }
+            
+            .frame .content {
+                font-family: sans-serif;
+                overflow: scroll;
+                height: 40%;
+                font-size: 10pt;
+                line-height: 18pt;
+                margin-top: 2vw;
+                font-weight: 700;
+                color:blue;
+            }
+            
+            .frameimg {
+                font-family: sans-serif;
+                width: 30vw;
+                height: 15vw;
+                overflow: hidden;
+                position: relative;
+            }
+            
+            .listA{
+                font-family: sans-serif;
+                margin-top: -1px;
+                width:50px;
+                height:24px;
+                border: 1.5px solid black;
+                font-size: 14px;
+                padding-top: 6px;
+                padding-left: 5px;
+                font-weight: 600;
+                background-color: none;
+                
+            }
+            
+            .list{
+                font-family: sans-serif;
+                margin-top: -1px;
+                width:120px;
+                height:24px;
+                border: 1.5px solid black;
+                font-size: 14px;
+                padding-top: 6px;
+                padding-left: 5px;
+                font-weight: 600;
+                background-color: none;
+                
+            }
+            
+            #menu{
+                font-family: sans-serif;
+                margin-top: 2px;
+                font-weight: 800;
+            }
+            
+            #bar{
+                font-family: sans-serif;
+                position: fixed;
+                border:1px solid black;
+                background-color: white;
+                margin-left: 940px;
+                margin-top: -375px;
+                padding: 5px;   
+                width: 57px;
+                height:217px;
+                z-index: 1px; 
+                box-shadow: 1px 1px 1px #888888, 1px -1px 1px #888888;
+                background-color: rgba(255,255,255,0.75);
+            }
+            
+            #barA{
+                font-family: sans-serif;
+                position: fixed;
+                border:1px solid black;
+                background-color: white;
+                margin-left: 950px;
+                margin-top: -350px;
+                padding: 5px;   
+                width: 128px;
+                height:128px;
+                z-index: 1px; 
+                box-shadow: 1px 1px 1px #888888, 1px -1px 1px #888888;
+                background-color: rgba(255,255,255,0.75);
+            }
+            
+            .mlink:hover{
+                font-family: sans-serif;
+                color: blue;
+            }
+            
+            #script{
+                font-family: sans-serif;
+                margin-left: 20px;
+                margin-top: -100px;
+                padding: 10px;
+                position: fixed;
+                overflow: scroll;
+                width:250px;
+                height:300px;
+                line-height: 24px;
+                border: 1px solid black;
+                background-color: rgba(255,255,255,0.75);
+                box-shadow: 2px 2px 4px #888888;
+            }
+            
+            .arrow{
+                font-family: sans-serif;
+                display: inline-block;
+                position: relative;
+                text-align: center;
+                margin-top: 20px;
+                color:lightgray;
+                font-size:18px;
+                font-weight: 700
+            }
+            
+            .arrow:hover{
+                font-family: sans-serif;
+                color: blue;   
+            }
+            
+            #agi{
+                font-family: sans-serif;
+                margin-top: 20px;
+                margin-left: 45px; 
+                position: fixed;
+                font-weight: 800;
+                font-size: 36px;
+                line-height: 40px;
+            }
+            
+            #agia{
+                font-family: sans-serif;
+                margin-top: 560px;
+                margin-left: 1120px; 
+                position: fixed;
+                font-weight: 800;
+                font-size: 48px;
+                line-height: 40px;
+                transform:  rotate(270deg);
+            }
+            
+            #yearFourth{
+                font-family: sans-serif;
+                width:120px;
+                height:20px;
+            }
+            
+            .cf:link {
+                text-decoration: none;
+                font-family: sans-serif;
+                color : orange;
+            }
+            
+            .cf:visited {
+                font-family: sans-serif;
+                color: orange;
+            }
+            
+            .cf:hover {
+                font-family: sans-serif;
+                color: black;
+            }
+        </style>
+        
+        <title>HISTORY OF A.G.I and H.C.I</title>
+    </head>
+    <body>
+        <div id="agi">History<br>Of</div>
+        <div id="agia">H.C.I</div>
+        <div id="box">
+            <div class="year" id="first">H.C.I : HUMAN X COMPUTER</a></div>
+            <div id="text1960">Human–computer interaction (HCI) researches the design and use of computer technology, focusing particularly on the interfaces between people (users) and computers. Researchers in the field of HCI both observe the ways in which humans interact with computers and design technologies that let humans interact with computers in novel ways.</div>
+            <div class="images" id="imageFirst"><a href="#frame1"><div class="years" id="yearFirst">버네바 부시</div></a></div>
+            <div class="images" id="imageSecond"><a href="#frame2"><div class="years" id="yearSecond">노버트 위너</div></a></div>
+            <div class="images" id="imageThird"><a href="#frame3"><div class="years" id="yearThird">릭 라이더</div></a></div>
+            <div class="images" id="imageFourth"><a href="#frame4"><div class="years" id="yearFourth">더글라스 엥겔바트</div></a></div>
+            <div class="images" id="imageFifth"><a href="#frame5"><div class="years" id="yearFifth">테드 넬슨</div></a></div>
+            <div class="images" id="imageSeventh"><a href="#frame7"><div class="years" id="yearSeventh">엘런 케이</div></a></div>
+            <div id="copy"><strong><a id="copyA" target="blank" href="http://www.parkseyeon.com/">copyrights © 2015 Se Yeon Park<br>All rights are reserved.</a></strong></div>
+            <div id="script">
+            <h3>H.C.I 란?</h3>    
+            인간-컴퓨터 상호작용(Human-computer interaction, HCI, CHI)은 인간과 컴퓨터 간의 상호작용에 대해 연구하는 학문 분야다. 이 분야에서는 전산학, 심리학, 산업공학 등의 서로 다른 연구분야가 공동으로 연구를 진행하는 경우가 많다. 여기서 말하는 상호작용은 사용자와 컴퓨터 사이에 있는 사용자 인터페이스에서 발현되는 작동을 의미하는데, 사용자 인터페이스는 하드웨어와 소프트웨어를 모두 포함하며, 최근 상황지각컴퓨팅(context-aware computing)의 등장은 사용자 인터페이스의 정의를 주변 상황에까지 확장시키고 있어, 그 의미가 차츰 모호해지고 있다.
+            </div>
+    
+            <div id="barA">
+                <div id = "menu" class="list">MENU</div>
+                <div id = "home" class="list"><a class="mlink" href="agi_timeline.html">Timeline : A.G.I</a></div>
+                <div id = "home" class="list"><a class="mlink" href="hci_timeline.html">History of H.C.I</a></div>
+                <div id = "home" class="list"><a class="mlink" href="index.html">Home</a></div>
+            </div>
+        </div>
+    
+        <div id="frame1" class="transparency">
+            <div class="frame">
+                <h2><strong>버네바 부시</strong> ( 1890 ~ 1974 )</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:0px " src="img/bush/bush.jpg">
+                </div>
+                <div class="content">
+                    
+                    2차 세계대전 이후, 과학계는 전쟁을 승리로 이끌었던 과학기술들을 평화를 유지하기 위해 활용하는것에 관심이 깊어짐. 이러한 주제에 맞추어 바네바 부시가 <a class = "cf" target="blank" href="http://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/">"월간 아틀란틱"에 기고한 글</a>이 바로 "우리가 생각하는 대로"이다. 가속화 되어가는 정보 홍수의 시대에 어떻게 정보를 수집하고, 저장하고, 접근해야 하는가에 대한 해답을 "우리가 생각하는 대로 As We May Think"를 통해 제시한다.
+                    당시 과학정보의 정체는 지식 자체의 문제라기 보다는 관련 지식의 이해와 확장이 출판물이라는 수단에 갇혀있기 때문이라고 보았다. 습득한 지식을 출판하고 공유하는데에 더 큰 도움을 줄 수 있는 가상의 장치를 고안하는데, 이것이 바로 <a class = "cf" target="blank" href="https://en.wikipedia.org/wiki/Memex">메멕스 MEMEX(Memory extender)</a>이다. 메멕스의 작동 방식은 40년대 기술-마이크로 필름 저장, 기계적 검색에 의존해 이야기 하고 있지만, 이 메멕스의 하이퍼미디어적 개념은 현대에도 여전히 큰 영향을 끼치고 있다. 그는 <a class ="cf" href ="#frame4"> 더글라스 엥겔바트</a>, <a class ="cf" href ="#frame3">릭 라이더</a> 등 한 세대에 걸친 컴퓨터 과학자들에게 영감을 주어 현대 정보 사회가 성립하는 데에 촉매 역할을 한 것으로 기억된다.
+그가 메멕스를 고안할 때 고려한 문제점은, 우리가 실제로 사고하고 연상하는 방식이 지식 출판물의 정보 전달 방식과 큰 괴리가 있다는 것이었다.(여담: <a class ="cf" href = "#frame7">엘런케이</a>는 인간의 사고-연상방식을 이용해 GUI를 정립. 점점 인간을 닮아가는 기계) 우리는 도서관이나 책 등에서 어떤 데이터를 찾아갈 때 색인, 알파벳이나 숫자 순으로 검색하는 시스템을 통해 접근한다. 부시는 이것을 다소 거추장스러운 규칙이라고 생각한다. 그리고 우리가 연상하는 방식, 정보의 선택과 집중을 활용한 방식을 활용한 메멕스를 고안하게 된다. 
+이후 메멕스는 테드넬슨의 '' 개념에 큰 영향을 주었으며, 이후 조지랜도우는 하이퍼 미디어를 창의적이고 학술적인 글쓰기를 위한 미디어로서 제안한다. 바네바부시의 메멕스는 정보의 저장-연상적 색인 에 그쳤다면, 조지랜도우를 비롯한 현대에 와서는 다른 사람들과의 정보 공유를 통한 새로운 정보의 도출, 상호작용적 글쓰기 등 정보의 창출로까지 이어지게 된다.</div>
+                <a href="#frame2"><div class="arrow">></div></a>
+	       </div>
+        </div>
+    
+        <div id="frame2" class="transparency">
+            <div class="frame">
+                <h2>노버트 위너 (1894 ~ 1964)</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; ; margin-top:-220px " src="img/bush/nobert.jpg">
+                </div>
+                <div class="content">
+                    “우리는 사회가 주는 메세지와 커뮤니케이션 기기의 연구를 통해서만 사회를 이해할 수 있다. 미래에는 커뮤니케이션 기기들의 개발에 의해 사람과 기계 사이, 기계와 사람 사이, 그리고  기계와 기계 간의 커뮤니케이션은 좀 더 큰 역할을 맡게 될 것이다.”
+
+
+노버트 위너는 헝가리 출신의 수학자이자, 전자 공학자이며 커뮤니케이션 전문가이기도 하다. 그는 1948년 <a class="cf" target="blank"; href ="https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%EB%B2%84%EB%84%A4%ED%8B%B1%EC%8A%A4">“사이버네틱스(cybernetics)”</a>라는 논문을 발표했는데, 이것은 인간-기계 사이의 커뮤니케이션의 본질을 다루는 대단히 뛰어난 논문이었다. 2년 뒤 자신의 이론을 일반인에게 소개하기 위해 “인간의 인간적 사용” 이라는 책을 출판하였다.
+
+위너는 인간-기계의 커뮤니케이션이 인간의 내면에 영향을 준다고 주장하였다. 사이버네틱스에 관한 그의 이론은 기계에 대한 의존도가 높아지고, 기계와의 상호작용이 보편화되어 있는, 기술 진보적 사회에서 살고 있는 사람들의 삶의 질을 향상 시키기 위한 것이었다.
+
+
+사이버네틱스는 인간과 기계, 기계와 기계 사이의 메세지를 전송하는 과학이다. 여기서 메세지는 제어와 같은 부류이다. 메세지가 명령적이건 아니건 커뮤니케이션은 메세지의 성격을 구분하지 않으므로 상황은 변하지 않는다. 또한 메세지는 외부 세계의 상태처럼 <a class="cf" target="blank" href="https://ko.wikipedia.org/wiki/%EC%97%94%ED%8A%B8%EB%A1%9C%ED%94%BC">엔트로피</a>를 갖는 것으로 취급하는 것이 가능하다. 위너는 인간이 외부 세계에서 정보를 받아 다시 외부 세계에 반응하고 움직이는 프로세스와 기계의 작동이 다르지 않다는 것을 말한다.
+
+
+여기서 <a class = "cf" target="blank" href = "https://www.youtube.com/watch?v=BF3t4CKXcNA" >피드백</a>의 개념이 나오는데 인간이 외부 세계의 메세지를 인식하여 행동을 제어하는 것처럼 기계에는 피드백이 필요하다 피드백은 실제 작동하는 방식에 바탕을 둔 엔트로피를 억제하는 기계 제어이다.</div>
+                <a href="#frame1"><div class="arrow"><</div></a>
+                <a href="#frame3"><div class="arrow">></div></a>
+	       </div>
+        </div>
+            
+        <div id="frame3" class="transparency">
+            <div class="frame">
+                <h2>릭 라이더 (1915 ~ 1990)</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-150px " src="img/bush/lick.jpg">
+                </div>
+                <div class="content">
+                    1950년대 말, 릭라이더는 창의적인 과정에 인간의 파트너로 컴퓨터가 사용되리라는 것을 예견한, 몇 안되는 과학자 중 한 사람이었다. 또한 그는 1960년대대에 미국 정부 기관인 첨단연구프로젝트국 ARPA( Advanced Research Projects Agency)의 소장으로 재임하는 동안, 릭 라이더는 더 글라스 엥겔바트와 함께 인간-컴퓨터 상호작용과 개인용 컴퓨터의 출현을 이끌어내는 논쟁적이고 중대한 연구를 지원하였다. 컴퓨터를 네트워크로 연결하는 그의 연구는 1969년 <a class="cf" target="blank" href="http://science.postech.ac.kr/hs/C34/C34S003.html">ARPANET</a>이라고 알려진 인터넷을 탄생시키는 계기가 되었다.
+
+ 
+
+<a class="cf" target="blank" href= "http://groups.csail.mit.edu/medg/people/psz/Licklider.html">"인간- 컴퓨터의 공생 ( Man-Computer Symbiosis )"</a>라는 책에서 릭라이더는 기존의 인간-기계의 일반적 조합 형태를 부정한다. 즉, 시스템 외부에 인간이 존재하고, 컴퓨터는 인간이 공식화 해 놓은 문제를 풀어내면서 조력하는 관계가 아닌 인간을 시스템과 동등한 관계로 인식하면서 인적 속성을 기계의 긍정적 특성과 융합하는 사이보그개념에 근접한 모델이었다. 다시 말해 모든 경우를 사전에 준비해 놓고 그렇게 선결된 절차와 공식에 의존하는 것을 넘어, 인간-컴퓨터 단일체가 직관과 논리를 동시에 투입해가며 탄력적으로 오류를 수정해 나아가는 문제 접근방식을 릭라이더는 모색하였다.
+                </div>
+                <a href="#frame2"><div class="arrow"><</div></a>
+                <a href="#frame4"><div class="arrow">></div></a>
+	       </div>
+                
+        </div>    
+           <div id="frame4" class="transparency">
+            <div class="frame">
+                <h2>더글라스 엥겔바트 (1925 ~ 2013)</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-130px " src="img/bush/engel.jpeg">
+                </div>
+                <div class="content">
+                    1945년, 더글라스 엥겔바트는 <a class="cf" href="#frame1">바네바 부시</a>의 ‘As We May Think’ 논문을 읽고 큰 영향을 받는다. 그는 레이더 기술자로 일하던 기술을 컴퓨터에 응용해, 입력 장치를 통한 컴퓨터와 인간 사이의 상호작용 방식을 연구하였다. 입력 장치의 변화는 인간이 컴퓨터를 대하는 사고방식과 상호작용 자체를 바꾸어 놓았다. 인간과 컴퓨터는 보다 긴밀하게 연결되고, 엥겔바트는 이를 통해 인간 정신의 지적 능력을 확대시킬 가능성을 모색하였다.
+
+                        1962년 엥겔바트는 ‘인간 지능의 확대: 개념 구조’를 발표한다. 이 논문에서 엥겔바트는 인간이 더 복잡해지는 문제에 대처하기 위해 지능을 확대시킬 필요가 있다고 말하며, 이 확대 방법을 찾기 위한 안내의 역할을 하는 ‘개념 구조’를 제시한다.  이 논문을 통해 엥겔바트는 <a class="cf" href="#frame3">릭 라이더</a> 소장의 ARPA 후원을 받게 된다. 후원을 통해 엥겔바트는 조사팀 ARC를 설립해 인간의 지능을 확대시킬 장치를 만들었다. ‘oNLine System(NLS)’라 불린 이 장치는 네트워크를 통해 사용자들 사이의 협력적인 상호작용을 지원하는 것이었다. 이 장치는 비트맵 스크린, 마우스, 하이퍼텍스트 등을 최초로 적용하였다. 이것은 컴퓨터를 직관적으로 작동시킨다는 개념을 제시하며, 이후의 GUI 발전에 영향을 주었다.  엥겔바트는 네트워크를 통해 전문가 그룹 사이의 집합적인 지식의 토대를 만들어낼 수 있을 것이라 생각하였다. 
+                </div>
+                <a href="#frame3"><div class="arrow"><</div></a>
+                <a href="#frame5"><div class="arrow">></div></a>
+	       </div>    
+        </div> 
+               
+        </div>    
+           <div id="frame5" class="transparency">
+            <div class="frame">
+                <h2>테드 넬슨 (1937 ~  )</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-50px " src="img/bush/ted.jpg">
+                </div>
+                <div class="content">
+                    “...생각의 구조는 결코 순차적이지 않다. 생각은 모든 지점에서 서로 연결되어 있다. 우리가 글을 쓸 때에도, 우리는 늘 사물을 비순차적인 방식으로 연결하려 한다. ”
+
+테드 넬슨은 컴퓨터에 관한 정규 교육을 받은 적이 없는 철학과 학생이었지만, 두 번의 중요한 만남이 테드 넬슨을 컴퓨터 분야의 주요 인물로 만드는 계기가 된다. 
+
+그 중 하나가 바네바 부시의 논문 <우리가 생각하는 대로> 이다. 나머지 하나는 사무엘 테일러 콜리지의 시 “제너두 Xanadu”이다. 이 시는 넬슨에게 방대한 기억의 저장소 라는 이미지를 제공하였으며, 그의 일생일대의 작품의 개념과도 상당한 관련이 있다.<br> 
+
+넬슨은 우리가 읽고 쓰는 방식을 전환시켜 줄 방법에 대한 탐구에 결과로, <a class="cf" target="blank" href="https://ko.wikipedia.org/wiki/%ED%95%98%EC%9D%B4%ED%8D%BC%ED%85%8D%EC%8A%A4%ED%8A%B8">하이퍼텍스트</a>와 <a class="cf" target="blank" href="https://ko.wikipedia.org/wiki/%ED%95%98%EC%9D%B4%ED%8D%BC%EB%AF%B8%EB%94%94%EC%96%B4">하이퍼미디어</a> 라는 개념을 만들었다.    
+                </div>
+                <a href="#frame4"><div class="arrow"><</div></a>
+                <a href="#frame6"><div class="arrow">></div></a>
+	       </div>    
+        </div> 
+               
+        </div>    
+           <div id="frame6" class="transparency">
+            <div class="frame">
+                <h2>1998</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-50px " src="img/1990s/1990-6.jpeg">
+                </div>
+                <div class="content">
+                    We visited a delightful local paper-maker’s. Some people hired a car and drove to Paestum, where they spent an enjoyable afternoon at the ancient temple ruins and on the winding coastal road.One evening was spent at sea. The fishermen took us to their far-off fishing grounds where, by the light of the moon, they cooked fish and chips on board, which we washed down with the local wine. The customary AGI official photo was taken on the high steps of Amalfi Cathedral. The following year, the AGI took a sabbatical from its series of congresses. For contemplation, perhaps?More sadness: within the space of six months, we lost a number of prominent AGI members: Jock Kinneir, Roberto Sambonet, Bradbury Thompson, Walter Herdeg. Gérard Miedinger, Roman Cieslewicz and Kurt Wirth. There was a worthy commemoration in the AGI Letter 5/6.In 1997, it was Europe again: AGI in Barcelona. Spanish temperament, in the highly capable hands of Javier Mariscal and Pedro ‘Peret’ Torrent. The fabulous city played the major role (although there were criminal touches here and there, as a number of light-fingered locals helped themselves to quite a few things). But what brilliance, what energy and what creativity we were treated to. The welcome dinner was held in a lively restaurant, Hivernacle, on the completely renovated quay. The congress commenced with a presentation on Spanish culture and design. In the evening, we moved to Peret’s big studio. The studio was an almost theatrical revelation, as good as the work he showed. ‘Airs of Spain’ entertained us with live music. The next day was AGI day: the assembly and the presentation of new members. A new board also took up its role: Ken Cato, David Hillman, Jean Robert, Ruedi Rüegg, Laurence Madrelle and Uwe Loesch. These IEC members were allotted their own ‘ministries’.The evening started with ‘The Incredible Magic Bus Tour’. The tour of the city was linked to all kinds of pieces of street theatre, mini operas, fake bullfights and acrobatics. Gaudi received a generous amount of attention, with his Sagrada Familia and the Parc Güell, where we were treated to a surprising concert and fireworks once the sun had made way for the moon. Dinner was on the mountainside.The following morning, Ruedi Baur, George Hardie, Lars Müller and Paula Scher got us to look to the future, ‘Inventing the Next Century’. In the evening, the coach took us to the equally vast Estudio Mariscal, where the young maestro delighted us with his cinematic presentation, ‘The History of Colours’. His often exuberant work bears a very clear signature. The recent AGI acquisitions, Peret and Mariscal, immediately won the hearts of all their colleagues. The farewell party at an industrial site was a whirl of dancing, acrobatics, theatre, lights, fire, music, food and drink: an overwhelming, unforgettable experience for all the senses. Barcelona set some great AGI records. AGI also unveiled its own ‘Oscar’ award, named the ‘Henri’, a typical Peret creation, intended to be awarded annually to members of extraordinary merit. Two were immediately promised in the presence of Henrion’s widow, Marion: one for the co-founder Jacques Nathan Garamond and one for Pieter Brattinga (which I later handed to him in Amsterdam during a private viewing at his Print Gallery).The selection committee for new members in Barcelona (1997) received nominations for no fewer than 80 candidates. Even more astounding is that 50 of them were accepted. If you look at the list of names, it is a qualitatively impressive company (see AGI Letter #9 of September 1997). Surely it can’t be that the 50 from 1997 were flukes? In 1998, too, there were more than 80 candidates and these generated 47 new members. Agitate in March 1999 again demonstrated a solid level of quality.In 1997 seven prominent French designers wrote a very concerned letter in the AGI Letter (#9). They wondered what was left of the ideals and intentions of the AGI founding fathers. ‘The history of design is difficult to write. Has it developed independently from history: fascism/socialism/world war/Cold War/fall of totalitarian socialism/triumph of the international financial capitalism?’ ‘What should be our values as designers today’ and ‘What to do and what to teach?’ We do design to commemorate Hiroshima, to celebrate human rights, to fight child labour and child abuse, to guard against the mistreatment of prisoners, but those are still the proverbial drops in the ocean. We are now 10 years further on and the right answers have still not been given. Certainly, the gap between the insatiable ‘haves’ and the ‘have-nots’ has widened enormously. There would appear to be no suppressing the greed and the urge to flaunt. Some have two-million-Euro cars, pimped up for the same amount again... and some have daily wages of something like $1 or less. The themes of AGI Toronto 1998 were ‘Confrontation, Collaboration and Congregation’, with the emphasis on the first. A city of 4.5 million people, dubbed by Peter Ustinov ‘New York run by the Swiss’. The welcome reception was in the Design Exchange (DX), a landmark from the 1930s. Readings and discussions were on the agenda for the second day. A mixture of AGI members, other designers, architects, artists, musicians and people from the theatre world. More confrontations and debates on day 3, when an exhibition of Canadian postage stamps by AGI members also opened. A culinary tour and jazz concluded the day. The final AGI day was reserved for the assembly and the dinner dance.
+                </div>
+                <a href="#frame5"><div class="arrow"><</div></a>
+                <a href="#frame7"><div class="arrow">></div></a>
+	       </div>    
+        </div> 
+               
+        </div>    
+           <div id="frame7" class="transparency">
+            <div class="frame">
+                <h2>앨런 케이 (1940 ~ )</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-80px " src="img/bush/ellen.jpg">
+                </div>
+                <div class="content">
+                    매사추세츠 주의 스프링필드에서 자란 그는 콜로라도 대학에서 분자 생물학과 수학에서 학사를 취득했으며 유타 대학에서 석사및 박사과정을 받았다. 1960년대 유타 대학에서 그는 이반 서덜랜드와 함께 스케치패드 개발을 포함한 선구적인 컴퓨터 그래픽 연구를 수행하였다.
+
+이 시기에 그는 재즈 기타리스트로 활동한적이 있으며 진 피아제와 구성주의 작품에 대해 연구하기도 하였다. 세이무어 페이퍼트와 로고 프로그래밍 언어를 같이 개발하였는데 이후 그의 활동에 큰 영향을 주었다<br>
+                        1970년에 제록스사의 팔로 알토 연구소(PARC)에 입사하였으며 스몰토크 프로그래밍 언어를 이용한 네트워크 워크스테이션의 초기 모델을 개발하는 핵심 연구원으로 활동했다. 여기서 개발된 디자인은 이후 애플사의 매킨토쉬 컴퓨터 개발에 큰 영향을 주었다. 그는 제록스 파크 연구소와 노르웨이 컴퓨터 센터의 전임자들과 함께 객체 지향 프로그래밍(OOP, Object Oriented Programming)의 아이디어를 만들어 낸 창시자 중 한 명이다. 그는 초기 노트북 컴퓨터의 기본을 만들어낸 다이나북의 컨셉과 태블릿 컴퓨터를 구상해 냈으며 현대적인 윈도 기반의 그래픽 사용자 인터페이스(GUI)를 설계한 장본인이기도하다. 제록스 파크 연구소에서의 10년간 근무 이후 3년 간 아타리의 선임 연구원으로 근무하였다.
+                </div>
+                <a href="#frame5"><div class="arrow"><</div></a>
+	       </div>    
+        </div>
+               
+    </body>
+
+
+    <script>
+        var box = document.getElementById('box');
+        var imageFirst = document.getElementById('imageFirst');
+
+        var mDown = false;
+        var onMouseDown = function(e) {
+            if(e.target === imageFirst) {
+                mDown = true; 
+                imageFirst.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp = function(e) {
+            if(e.target === imageFirst) {
+                mDown = false; 
+                imageFirst.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageFirst) {
+                var rect = box.getBoundingClientRect();
+                imageFirst.style.left = (e.pageX - rect.left - 120) + 'px';
+                imageFirst.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+
+        window.addEventListener('mousedown', onMouseDown);
+        window.addEventListener('mouseup', onMouseUp);
+        window.addEventListener('mousemove', onMouseMove);
+        
+        /*-------------------------------------------------*/
+        
+        var imageSecond = document.getElementById('imageSecond');
+        var onMouseDown1 = function(e) {
+            if(e.target === imageSecond) {
+                mDown = true; 
+                imageSecond.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp1 = function(e) {
+            if(e.target === imageSecond) {
+                mDown = false; 
+                imageSecond.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove1 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageSecond) {
+                var rect = box.getBoundingClientRect();
+                imageSecond.style.left = (e.pageX - rect.left - 90) + 'px';
+                imageSecond.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown1);
+        window.addEventListener('mouseup', onMouseUp1);
+        window.addEventListener('mousemove', onMouseMove1);
+        
+        /*-------------------------------------------------*/
+        
+        var imageThird = document.getElementById('imageThird');
+        var onMouseDown2 = function(e) {
+            if(e.target === imageThird) {
+                mDown = true; 
+                imageThird.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp2 = function(e) {
+            if(e.target === imageThird) {
+                mDown = false; 
+                imageThird.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove2 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageThird) {
+                var rect = box.getBoundingClientRect();
+                imageThird.style.left = (e.pageX - rect.left - 90) + 'px';
+                imageThird.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown2);
+        window.addEventListener('mouseup', onMouseUp2);
+        window.addEventListener('mousemove', onMouseMove2);
+        
+        /*-------------------------------------------------*/
+        
+        var imageFourth = document.getElementById('imageFourth');
+        var onMouseDown3 = function(e) {
+            if(e.target === imageFourth) {
+                mDown = true; 
+                imageFourth.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp3 = function(e) {
+            if(e.target === imageFourth) {
+                mDown = false; 
+                imageFourth.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove3 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageFourth) {
+                var rect = box.getBoundingClientRect();
+                imageFourth.style.left = (e.pageX - rect.left - 90) + 'px';
+                imageFourth.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown3);
+        window.addEventListener('mouseup', onMouseUp3);
+        window.addEventListener('mousemove', onMouseMove3);
+        
+        /*-------------------------------------------------*/
+        
+        var imageFifth = document.getElementById('imageFifth');
+        var onMouseDown4 = function(e) {
+            if(e.target === imageFifth) {
+                mDown = true; 
+                imageFifth.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp4 = function(e) {
+            if(e.target === imageFifth) {
+                mDown = false; 
+                imageFifth.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove4 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageFifth) {
+                var rect = box.getBoundingClientRect();
+                imageFifth.style.left = (e.pageX - rect.left - 175) + 'px';
+                imageFifth.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown4);
+        window.addEventListener('mouseup', onMouseUp4);
+        window.addEventListener('mousemove', onMouseMove4);
+        
+        /*-------------------------------------------------*/
+        
+        var imageSixth = document.getElementById('imageSixth');
+        var onMouseDown5 = function(e) {
+            if(e.target === imageSixth) {
+                mDown = true; 
+                imageSixth.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp5 = function(e) {
+            if(e.target === imageSixth) {
+                mDown = false; 
+                imageSixth.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove5 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageSixth) {
+                var rect = box.getBoundingClientRect();
+                imageSixth.style.left = (e.pageX - rect.left - 175) + 'px';
+                imageSixth.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown5);
+        window.addEventListener('mouseup', onMouseUp5);
+        window.addEventListener('mousemove', onMouseMove5);
+        
+        /*-------------------------------------------------*/
+        
+        var imageSeventh = document.getElementById('imageSeventh');
+        var onMouseDown6 = function(e) {
+            if(e.target === imageSeventh) {
+                mDown = true; 
+                imageSeventh.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp6 = function(e) {
+            if(e.target === imageSeventh) {
+                mDown = false; 
+                imageSeventh.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove6 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageSeventh) {
+                var rect = box.getBoundingClientRect();
+                imageSeventh.style.left = (e.pageX - rect.left - 90) + 'px';
+                imageSeventh.style.top = (e.pageY - rect.top - 120) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown6);
+        window.addEventListener('mouseup', onMouseUp6);
+        window.addEventListener('mousemove', onMouseMove6);
+    </script>
+</html>

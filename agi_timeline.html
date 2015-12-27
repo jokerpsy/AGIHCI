@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="utf-8">
+        
+        <style>
+            #container {
+                font-family: sans-serif;
+                position: relative;
+                margin: auto;
+                width: 1000px;
+                height: 650px;
+                overflow: hidden;
+                background-color: white;
+            }
+            
+            #agi{
+                font-family: sans-serif;
+                margin-top: 20px;
+                margin-left: 175px; 
+                position: absolute;
+                font-weight: 800;
+                font-size: 36px;
+                line-height: 36px;
+            }
+
+            .word{
+                font-family: sans-serif;
+                position: fixed;
+                transform: scale(0.8);
+                margin : 0px;
+                display: inline-block;
+            }
+            
+            #A{
+                font-family: sans-serif;
+                margin-left: 475px; 
+                margin-top: -50px;
+            }
+            
+            #G{
+                font-family: sans-serif;
+                margin-left: 125px; 
+                margin-top: 290px; 
+                transform: scale(0.87);
+            }
+            
+            #I{
+                font-family: sans-serif;
+                margin-top: 295px;  
+                margin-left: 455px;
+                transform: rotate(-45deg);
+            }
+            
+            .intro{
+                font-family: sans-serif;
+                position: fixed;
+                font-family: sans-serif;
+                font-size: 36px;
+                font-weight: 800;
+                line-height: 48px;
+            }
+            
+            #agia{
+                font-family: sans-serif;
+                margin-left: 537px;
+                margin-top: 122px;
+                line-height: 36px;
+                font-size: 26px;
+                transform:rotate(-60deg);
+            }
+            
+            #agig{
+                font-family: sans-serif;
+                font-size:26px;
+                margin-left: 280px;
+                margin-top: 400px;
+                line-height: 36px;
+                transform:rotate(-90deg);
+            }
+            
+             #agii{
+                font-family: sans-serif;
+                margin-left: 610px;
+                margin-top: 456px;
+                line-height: 36px;
+                transform:rotate(45deg);
+                font-size:26px;
+            }
+            
+            .year{
+                font-family: sans-serif;
+                position: fixed;
+                font-family: sans-serif;
+                
+                font-size: 18px;
+                line-height: 30px;
+                
+                border : 1px solid black;
+                background-color: white;
+                padding: 5px;
+                padding-top: 0px;
+                height: 20px;
+                font-weight:700;
+                box-shadow: 1px 1px 1px #888888, 1px -1px 1px #888888;
+            }
+            
+          
+            #first{
+                font-family: sans-serif;
+                margin-left: 90px;
+                margin-top: 170px;  
+            }
+            
+            #second{
+                font-family: sans-serif;
+                margin-left: 365px;
+                margin-top: 140px;  
+            }
+            
+            
+            #third{
+                font-family: sans-serif;
+                margin-left: 415px;
+                margin-top: 350px;
+                transform: rotate(90deg);
+            }
+            
+            #fourth{
+                font-family: sans-serif;
+                margin-left: 205px;
+                margin-top: 240px;
+                transform: rotate(90deg);
+            }
+            
+            #fif{
+                font-family: sans-serif;
+                margin-left: 595px;
+                margin-top: 520px;
+                transform: rotate(45deg);
+            }
+            
+            #sixth{
+                font-family: sans-serif;
+                margin-left: 860px;
+                margin-top: 400px;
+            }
+            
+            #seventh{
+                margin-left: 750px;
+                margin-top: 320px;
+                font-family: sans-serif;
+                border : 1px solid black;
+                background-color: white;
+                padding: 5px;
+                padding-top: 0px;
+                height: 34px;
+                text-align: center;
+                line-height: 20px;
+            }
+            
+            a{
+                font-family: sans-serif;
+                color: black;
+                text-decoration: none;    
+            }
+            
+            a:hover{
+                font-family: sans-serif;
+                color: white;   
+            }
+            
+            a:link{
+                font-family: sans-serif;
+                color: black;   
+            }
+            
+            a:visit{
+                font-family: sans-serif;
+                color: white;   
+            }
+            
+            .year:hover{
+                font-family: sans-serif;
+                background-color:blue;
+                color:white;
+                border:1px solid blue;
+                
+            }
+            
+            #seventh:hover{
+                font-family: sans-serif;
+                background-color:blue;
+                color:white;
+                border:1px solid blue;
+            }
+            
+            
+            
+            .img{
+                font-family: sans-serif;
+                position: fixed;
+                margin-top: -17.5vw;
+                margin-left: 8.8vw;
+                transform: scale(0.7);
+            }
+            
+            #six{
+                font-family: sans-serif;
+                margin-left: 100px;
+                margin-top: -30px;
+                transform: scale(0.6);
+            }
+            
+            #fifth{
+                font-family: sans-serif;
+                margin-top: -300px;
+                margin-left: -420px;
+                transform: scale(0.5);
+            }
+            
+            #seven{
+                font-family: sans-serif;
+                margin-top: -220px;
+                margin-left: 200px;
+                transform: scale(0.5);
+            }
+            
+            #eight{
+                font-family: sans-serif;
+                margin-top: -470px;
+                margin-left: -600px;
+                transform: scale(0.4);
+            }
+            
+            #nine{
+                font-family: sans-serif;
+                margin-top: -620px;
+                margin-left: -500px;
+                transform: scale(0.45) rotate(45deg);
+            }
+            
+            #ten{
+                font-family: sans-serif;
+                margin-top: -370px;
+                margin-left: -500px;
+                transform: scale(0.4);
+            }
+            
+            #next{
+                font-family: sans-serif;
+                margin-top: -300px;
+                margin-left: -645px;
+                transform: scale(0.3);
+            }
+            
+            .list{
+                font-family: sans-serif;
+                margin-top: -1px;
+                width:120px;
+                height:24px;
+                border: 1.5px solid black;
+                font-size: 14px;
+                padding-top: 6px;
+                padding-left: 5px;
+                font-weight: 600;
+                background-color: none;
+            }
+            
+            #menu{
+                font-family: sans-serif;
+                margin-top: 2px;
+                font-weight: 800;
+            }
+            
+            #bar{
+                font-family: sans-serif;
+                position: fixed;
+                border:1px solid black;
+                background-color: white;
+                margin-left: 800px;
+                margin-top: 31px;
+                padding: 5px;   
+                width: 128px;
+                height: 98px;
+                z-index: 1px; 
+                box-shadow: 1px 1px 1px #888888, 1px -1px 1px #888888;
+                background-color: rgba(255,255,255,0.75);
+            }
+            
+            .mlink:hover{
+                font-family: sans-serif;
+                color: blue;
+            }
+            
+            #copy {
+                font-family: sans-serif;
+                position: fixed;
+                margin-top: 600px;
+                margin-left: 400px;
+                text-align: center;   
+            }
+            
+            #copy:hover{
+                font-family: sans-serif;
+                color:black;   
+            }
+            
+            #copyA{
+                font-family: sans-serif;
+                color:black;   
+            }
+            
+            #script{
+                font-family: sans-serif;
+                margin-left: -50px;
+                margin-top: 300px;
+                padding: 10px;
+                position: fixed;
+                overflow: scroll;
+                width:200px;
+                height:300px;
+                border: 1px solid black;
+                background-color: white;
+                box-shadow: 2px 2px 4px #888888;
+                background-color: rgba(255,255,255,0.75);
+            }
+        </style>
+        <title>HISTORY OF A.G.I and H.C.I</title>
+    </head>
+    
+    <body>
+        <div id="container">
+        
+            <div id="agi">History of<br>A.G.I</div>
+            
+            <div id="A" class="word"><img src="img/a.gif"></div>
+            <div id="G" class="word"><img src="img/g.gif"></div>
+            <div id="I" class="word"><img src="img/i.gif"></div>
+            
+            <div id="agia" class="intro"><strong>A-lliance</strong></div>
+            <div id="agig" class="intro"><strong>G-raphique</strong></div>
+            <div id="agii" class="intro"><strong>I-nternationale</strong></div>
+            
+            
+            <div class ="img" id="six"><img src="img/1960s/1960.gif"></div>
+            <div class ="img" id="fifth"><img src="img/1950s/1950.gif"></div>
+            <div class ="img" id="seven"><img src="img/1970s/1970.gif"></div>
+            <div class ="img" id="eight"><img src="img/1980s/1980.gif"></div>
+            <div class ="img" id="nine"><img src="img/1990s/1990.gif"></div>
+            <div class ="img" id="ten"><img src="img/2000s/2000.gif"></div>
+            <div class ="img" id="next"><img src="img/2016/2016.gif"></div>
+            <div id="script">
+            <h3>What Is A.G.I?</h3>    
+                Inwards
+
+The AGI unites the world's leading graphics designers and artists in a professional club of common interest and achievement. It is an élite club. Its members have been collectively responsible for the  identity design of most of the world's top corporations and institutions as well as for countless examples of globally known packaging, publications, illustration and posters. The AGI provides for friendship, mutual respect and the enjoyment of the company of the like-minded - even reassurance in the face of a sceptical world. Ideas and experiences are exchanged informally at periodic meetings and by letter, email and fax. All members may also attend the AGI Congress, which involves a more formal business and social agenda. A different country hosts the Congress each year and presents its own history, members' work and professional achievements in art, commerce and education.
+
+Outwards
+
+The role and importance of the AGI within the professional field of graphic design is clearly different from the existing national and international professional organisations. In recognition of this context, the AGI is also a platform for activity. It has a task to tell the world and change it. Through the relationships and interaction of its members, the AGI promotes graphic design in lectures, education and publishing. It encourages knowledge and understanding among the young and fosters contacts with other institutions, organisations and companies involved in graphic design.
+
+The AGI holds exhibitions of members work which are highly influential in disseminating new forms, techniques and ideas. There is a book publishing programme based on the thoughts and works of members. There are contacts with colleges and schools, government bodies and commercial institutes, all aimed at promoting graphic design and visual literacy.
+
+Backwards
+
+In the 1940s, commercial artists, mural makers, typographers, printmakers, art directors, illustrators and poster designers increasingly realised their common bonds, and the modern profession of graphic design began to be defined. In 1951, five graphic artists - two Swiss and three French - decided to formalise their relationship into some sort of association. Their idea was simply to share common interests and friendships across national and cultural borders.
+
+It was a notion that soon attracted leading exponents of the graphic arts from elsewhere in Europe and in the USA. In 1952 the Alliance Graphique Internationale was incorporated in Paris with 65 members from 10 countries. The first AGI exhibition was held in Paris in 1955 and in 1969 the headquarters moved from Paris to Zurich. Student seminars were introduced in 1979 and the first Young Professional AGI Congress was held in London in 1994.
+
+Forwards
+
+An explosion of global communications is changing the world. Powered by media like television and the internet, a common visual language is forming as symbols and images become the world's universal vernacular. The original members of the AGI were responsible for creating many elements of this new language. As the world turns, their successors - exponents of the traditional and the new media - are becoming members of the AGI themselves. Today there are around 370 from Africa, America, Australia, Asia, the Middle East and Europe - 32 countries in all.
+
+Membership of the AGI requires reputation and achievement of the highest order and commitment to the processes of visual learning and perception, unfettered by cultural differences. The AGI remains dedicated to the universal aspect of graphic design as a means of communication and information, and its ideals remain relevant to the new world of visual literacy which its members have helped to bring about.
+            </div>
+            <a class="link" href="agi_1950s.html"><div class="year" id="first">1950s</div></a>
+            <a class="link" href="agi_1960s.html"><div class="year" id="second">1960s</div></a>
+            <a class="link" href="agi_1970s.html"><div class="year" id="third">1970s</div></a>
+            <a class="link" href="agi_1980s.html"><div class="year" id="fourth">1980s</div></a>
+            <a class="link" href="agi_1990s.html"><div class="year" id="fif">1990s</div></a>
+            <a class="link" href="agi_2000s.html"><div class="year" id="sixth">2000s</div></a>
+            <a class="link" href="2016.html"><div class="year" id="seventh">2016<br>NEXT IN SEOUL</div></a>
+            <div id="copy"><strong><a id="copyA" target="blank" href="http://www.parkseyeon.com/">copyrights © 2015 Se Yeon Park<br>All rights are reserved.</a></strong></div>
+            <div id="bar">
+                <div id = "menu" class="list">MENU</div>
+                <div id = "home" class="list"><a class="mlink" href="hci_timeline.html">History of H.C.I</a></div>
+                <div id = "home" class="list"><a class="mlink" href="index.html">Home</a></div>
+            </div>
+            
+        </div>
+    </body>
+    
+    <script>
+
+        
+    </script>
+</html>

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            #box {
+                font-family: sans-serif;
+                position: relative;
+                margin: auto;
+                width: 1200px;
+                height: 650px;
+                overflow: hidden;
+                background-color: none;
+            }
+
+            #imageFirst {
+                font-family: sans-serif;
+                position: absolute;
+                left: 100px;
+                top: 110px;
+                width: 220px;
+                height: 200px;
+                line-height: 50px;
+                background-color: none;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/1990s/1990-1.jpeg);
+                background-size: 220px 200px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageSecond {
+                font-family: sans-serif;
+                position: absolute;
+                left: 180px;
+                left: 300px;
+                top: 240px;
+                width: 200px;
+                height: 200px;
+                line-height: 50px;
+                background-color: none;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/1990s/1990-2.jpeg);
+                background-size: 200px 200px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageThird {
+                font-family: sans-serif;
+                position: absolute;
+                left: 485px;
+                top: 110px;
+                width: 250px;
+                height: 250px;
+                line-height: 50px;
+                background-color: none;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/1990s/1990-3.jpeg);
+                background-size: 250px 250px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageFourth {
+                font-family: sans-serif;
+                position: absolute;
+                left: 400px;
+                top: 340px;
+                width: 300px;
+                height: 200px;
+                line-height: 50px;
+                background-color: none;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/1990s/1990-4.jpeg);
+                background-size: 300px 200px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageFifth {
+                font-family: sans-serif;
+                position: absolute;
+                left: 680px;
+                top: 225px;
+                width: 300px;
+                height: 200px;
+                line-height: 50px;
+                background-color: none;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/1990s/1990-5.jpeg);
+                background-size: 300px 200px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageSixth {
+                font-family: sans-serif;
+                position: absolute;
+                left: 620px;
+                top: 425px;
+                width: 250px;
+                height: 200px;
+                line-height: 50px;
+                background-color: none;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/1990s/1990-6.jpeg);
+                background-size: 250px 200px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #imageSeventh {
+                font-family: sans-serif;
+                position: absolute;
+                left: 810px;
+                top: 295px;
+                width: 300px;
+                height: 200px;
+                line-height: 50px;
+                background-color: none;
+                color: white;
+                text-align: center;
+                cursor: pointer;
+                background-image:url(img/1990s/1990-7.jpeg);
+                background-size: 300px 200px;
+                box-shadow: 8px 8px 10px #888888; 
+            }
+            
+            #text1960{
+                font-family: sans-serif;
+                margin-left: 200px;
+                margin-top: 30px;
+                width:800px;  
+                color: gray;
+                font-weight:600;
+                line-height: 24px;
+            }
+            
+            #first{
+                font-family: sans-serif;
+                margin-top: 180px;
+                text-align: center;
+                font-size:36px;
+                line-height: 36px;
+                color:gray;
+                font-weight:700;
+                letter-spacing: 3px;
+            }
+            
+            #copy {
+                font-family: sans-serif;
+                position: fixed;
+                margin-top: 190px;
+                margin-left: 480px;
+                text-align: center;   
+            }
+            
+            #copy:hover{
+                font-family: sans-serif;
+                color:black;   
+            }
+            
+            a{
+                font-family: sans-serif;
+                text-decoration: none; 
+                color: black;
+            }
+            
+            .years{
+                font-family: sans-serif;
+                margin-left:0px;
+                margin-top: -22px;
+                line-height: 25px;
+                color:black;
+                font-size:16px;
+                font-weight: 800; 
+                border: 2px solid black;
+                width:40px;
+                height:20px;
+                background-color: white;
+                box-shadow: 2px 2px 4px #888888; 
+            }
+            
+            .years:hover{
+                font-family: sans-serif;
+                color:blue; 
+                border: 2px solid blue;
+            } 
+            
+            .transparency {
+                font-family: sans-serif;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.3);
+                transition: opacity 500ms;
+                visibility: hidden;
+                opacity: 0;
+            }
+            
+            .transparency:target {
+                font-family: sans-serif;
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .frame {
+                font-family: sans-serif;
+                margin: 70px auto;
+                padding: 40px;
+                background: white;
+                width: 30vw;
+                height: 70vh;
+                position: relative;
+                transition: all 1s ease-in-out;
+                box-shadow: 5px 5px 10px black;
+                border: 4px solid blue;
+            }
+
+            .frame h2 {
+                font-family: sans-serif;
+                margin-top: 0;
+                color: blue;
+                font-family: Tahoma, Arial, sans-serif;
+            }
+            .frame .close {
+                font-family: sans-serif;
+                position: absolute;
+                top: 20px;
+                right: 30px;
+                transition: all 200ms;
+                font-size: 30px;
+                font-weight: bold;
+                text-decoration: none;
+                color: lightgray;
+            }
+            
+            .frame .close:hover {
+                font-family: sans-serif;
+                color: blue;
+            }
+            
+            .frame .content {
+                font-family: sans-serif;
+                overflow: scroll;
+                height: 40%;
+                font-size: 10pt;
+                line-height: 18pt;
+                margin-top: 2vw;
+                font-weight: 700;
+                color:blue;
+            }
+            
+            .frameimg {
+                font-family: sans-serif;
+                width: 30vw;
+                height: 15vw;
+                overflow: hidden;
+                position: relative;
+            }
+            
+            .listA{
+                font-family: sans-serif;
+                margin-top: -1px;
+                width:50px;
+                height:24px;
+                border: 1.5px solid black;
+                font-size: 14px;
+                padding-top: 6px;
+                padding-left: 5px;
+                font-weight: 600;
+                background-color: none;
+                
+            }
+            
+            .list{
+                font-family: sans-serif;
+                margin-top: -1px;
+                width:120px;
+                height:24px;
+                border: 1.5px solid black;
+                font-size: 14px;
+                padding-top: 6px;
+                padding-left: 5px;
+                font-weight: 600;
+                background-color: none;
+            }
+            
+            #menu{
+                font-family: sans-serif;
+                margin-top: 2px;
+                font-weight: 800;
+            }
+            
+            #bar{
+                font-family: sans-serif;
+                position: fixed;
+                border:1px solid black;
+                background-color: white;
+                margin-left: 940px;
+                margin-top: -375px;
+                padding: 5px;   
+                width: 57px;
+                height:217px;
+                z-index: 1px; 
+                box-shadow: 1px 1px 1px #888888, 1px -1px 1px #888888;
+                background-color: rgba(255,255,255,0.75);
+            }
+            
+            #barA{
+                font-family: sans-serif;
+                position: fixed;
+                border:1px solid black;
+                background-color: white;
+                margin-left: 800px;
+                margin-top: 61px;
+                padding: 5px;   
+                width: 128px;
+                height:128px;
+                z-index: 1px; 
+                box-shadow: 1px 1px 1px #888888, 1px -1px 1px #888888;
+                background-color: rgba(255,255,255,0.75);
+            }
+            
+            .mlink:hover{
+                font-family: sans-serif;
+                color: blue;
+            }
+            
+            #script{
+                font-family: sans-serif;
+                margin-left: 20px;
+                margin-top: -100px;
+                padding: 10px;
+                position: fixed;
+                overflow: scroll;
+                width:250px;
+                height:300px;
+                border: 1px solid black;
+                background-color: rgba(255,255,255,0.75);
+                box-shadow: 2px 2px 4px #888888;
+            }
+            
+            .arrow{
+                font-family: sans-serif;
+                display: inline-block;
+                position: relative;
+                text-align: center;
+                margin-top: 20px;
+                color:lightgray;
+                font-size:18px;
+                font-weight: 700;
+            }
+            
+            .arrow:hover{
+                font-family: sans-serif;
+                color: blue;   
+            }
+            
+            #agi{
+                font-family: sans-serif;
+                margin-top: 20px;
+                margin-left: 45px; 
+                position: fixed;
+                font-weight: 800;
+                font-size: 36px;
+                line-height: 40px;
+            }
+            
+            #agia{
+                font-family: sans-serif;
+                margin-top: 560px;
+                margin-left: 1120px; 
+                position: fixed;
+                font-weight: 800;
+                font-size: 48px;
+                line-height: 40px;
+                transform:  rotate(270deg);
+            }
+        </style>
+        
+        <title>HISTORY OF A.G.I and H.C.I</title>
+    </head>
+    <body>
+        <div id="agi">History<br>Of</div>
+        <div id="agia">A.G.I</div>
+        <div id="box">
+            <div class="year" id="first">1990s : The End of Print?</a></div>
+            <div id="text1960">The congress had an important patron in the person of the Minister of Culture, Jack Lang. His involvement in the large-scale topical projects of Centre Pompidou, La Villette, the Musée d’Orsay and the Louvre and the associated graphic communication, information and education gave great added value to the congress. Grapus handled the organization and ensured a heavily philosophical and political slant to the programme. The enormous, elegant Renaissance château of Blois was the venue. The great courtyard offered plenty of fresh air after the often grave subject matter of the numerous speeches by politicians and authorities. Mime artists peopled the stage to provide distraction in the interim.</div>
+            <div class="images" id="imageFirst"><a href="#frame1"><div class="years" id="yearFirst">1991</div></a></div>
+            <div class="images" id="imageSecond"><a href="#frame2"><div class="years" id="yearSecond">1992</div></a></div>
+            <div class="images" id="imageThird"><a href="#frame3"><div class="years" id="yearThird">1993</div></a></div>
+            <div class="images" id="imageFourth"><a href="#frame4"><div class="years" id="yearFourth">1994</div></a></div>
+            <div class="images" id="imageFifth"><a href="#frame5"><div class="years" id="yearFifth">1995</div></a></div>
+            <div class="images" id="imageSixth"><a href="#frame6"><div class="years" id="yearSixth">1998</div></a></div>
+            <div class="images" id="imageSeventh"><a href="#frame7"><div class="years" id="yearSeventh">1999</div></a></div>
+            <div id="copy"><strong><a id="copyA" target="blank" href="http://www.parkseyeon.com/">copyrights © 2015 Se Yeon Park<br>All rights are reserved.</a></strong></div>
+            <div id="script">
+            <h3>What Is A.G.I?</h3>    
+                Inwards
+
+The AGI unites the world's leading graphics designers and artists in a professional club of common interest and achievement. It is an élite club. Its members have been collectively responsible for the  identity design of most of the world's top corporations and institutions as well as for countless examples of globally known packaging, publications, illustration and posters. The AGI provides for friendship, mutual respect and the enjoyment of the company of the like-minded - even reassurance in the face of a sceptical world. Ideas and experiences are exchanged informally at periodic meetings and by letter, email and fax. All members may also attend the AGI Congress, which involves a more formal business and social agenda. A different country hosts the Congress each year and presents its own history, members' work and professional achievements in art, commerce and education.
+
+Outwards
+
+The role and importance of the AGI within the professional field of graphic design is clearly different from the existing national and international professional organisations. In recognition of this context, the AGI is also a platform for activity. It has a task to tell the world and change it. Through the relationships and interaction of its members, the AGI promotes graphic design in lectures, education and publishing. It encourages knowledge and understanding among the young and fosters contacts with other institutions, organisations and companies involved in graphic design.
+
+The AGI holds exhibitions of members work which are highly influential in disseminating new forms, techniques and ideas. There is a book publishing programme based on the thoughts and works of members. There are contacts with colleges and schools, government bodies and commercial institutes, all aimed at promoting graphic design and visual literacy.
+
+Backwards
+
+In the 1940s, commercial artists, mural makers, typographers, printmakers, art directors, illustrators and poster designers increasingly realised their common bonds, and the modern profession of graphic design began to be defined. In 1951, five graphic artists - two Swiss and three French - decided to formalise their relationship into some sort of association. Their idea was simply to share common interests and friendships across national and cultural borders.
+
+It was a notion that soon attracted leading exponents of the graphic arts from elsewhere in Europe and in the USA. In 1952 the Alliance Graphique Internationale was incorporated in Paris with 65 members from 10 countries. The first AGI exhibition was held in Paris in 1955 and in 1969 the headquarters moved from Paris to Zurich. Student seminars were introduced in 1979 and the first Young Professional AGI Congress was held in London in 1994.
+
+Forwards
+
+An explosion of global communications is changing the world. Powered by media like television and the internet, a common visual language is forming as symbols and images become the world's universal vernacular. The original members of the AGI were responsible for creating many elements of this new language. As the world turns, their successors - exponents of the traditional and the new media - are becoming members of the AGI themselves. Today there are around 370 from Africa, America, Australia, Asia, the Middle East and Europe - 32 countries in all.
+
+Membership of the AGI requires reputation and achievement of the highest order and commitment to the processes of visual learning and perception, unfettered by cultural differences. The AGI remains dedicated to the universal aspect of graphic design as a means of communication and information, and its ideals remain relevant to the new world of visual literacy which its members have helped to bring about.
+            </div>
+            <div id="bar">
+                <div id = "home" class="listA"><a class="mlink" href="agi_1950s.html">1950s</a></div>
+                <div id = "home" class="listA"><a class="mlink" href="agi_1960s.html">1960s</a></div>
+                <div id = "home" class="listA"><a class="mlink" href="agi_1970s.html">1970s</a></div>
+                <div id = "home" class="listA"><a class="mlink" href="agi_1980s.html">1980s</a></div>
+                <div id = "home" class="listA"><a class="mlink" href="agi_1990s.html">1990s</a></div>
+                <div id = "home" class="listA"><a class="mlink" href="agi_2000s.html">2000s</a></div>
+                <div id = "home" class="listA"><a class="mlink" href="2016.html">2016</a></div>
+            </div>
+        
+            <div id="barA">
+                <div id = "menu" class="list">MENU</div>
+                <div id = "home" class="list"><a class="mlink" href="agi_timeline.html">Timeline : A.G.I</a></div>
+                <div id = "home" class="list"><a class="mlink" href="hci_timeline.html">History of H.C.I</a></div>
+                <div id = "home" class="list"><a class="mlink" href="index.html">Home</a></div>
+            </div>
+        </div>
+    
+        <div id="frame1" class="transparency">
+            <div class="frame">
+                <h2>1991 : Cairns</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-50px " src="img/1990s/1990-1.jpeg">
+                </div>
+                <div class="content">
+                    1991 took the AG to Cairns in Australia for the first time. For many, this was the ultimate far-from-hearth-and-home show. This was reflected in the modest turnout, 52 if you counted everybody. Well, when it comes down to it, even Japan isn’t next door. The programme focused on what, for the visitors, was a rather exotic culture, folklore and the wonders of nature. Ken Cato set the ball rolling and Peter Spearritt talked about the history of Australia from 1780 to the present: ‘People, Places and Things’. John McPhee, art historian, talked about Australian landscape painting. Haig Beck explained how the Australians them­selves had changed over the 200 years of their presence in the land of the Aborigines. After that, we were given the opportunity to learn how to use a boomerang, under the waving palms on the beach. We were even given two to decorate ourselves. Almost as difficult as throwing them. The Cairns congress also had a musical theme. Jazz, flute and clarinet against the didgeridoo. As far as nature was concerned, we sailed through the meandering waters of the mangrove forests, manfully followed the trail into the rainforest and went out to sea to snorkel around the coral reefs. The seafood was plentiful and good: enormous rather sweet oysters for the obligatory cholesterol. The Aborigines served their haute cuisine and demonstrated their theatrical arts. We were treated to the heritage of Australian logos and the publisher of the high-quality magazine Design World gave his talk, touching on Australian wines and films. At the barbecue on the last evening, the southern moon (a contrary thing) showed its best side. At least when it is full we recognize it.It was also the start of what was to become a great tradition under the Australian flag. Ken Cato organized his first (Inter)national Student Design Conference with (chairman) Jim Cross, Michael Vanderbyl, Henry Steiner, Jelle van der Toorn, Niklaus Troxler, Ernst Hiestand and the Vignellis on the bill. In Australia, ‘National’ can mean the student first has to travel 2,000 km. The first time, there was a turnout of no fewer than 510 students. That number has grown steadily over the years, as has the increasingly vast international hinterland from which they travel. It has become an established tradition, at which the finest representatives of AGI appear. Already fifteen years in a row, to date.     
+                </div>
+                <a href="#frame2"><div class="arrow">></div></a>
+	       </div>
+        </div>
+    
+        <div id="frame2" class="transparency">
+            <div class="frame">
+                <h2>1992 : Norwegian</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; height:40vh; margin-top:-50px " src="img/1990s/1990-2.jpeg">
+                </div>
+                <div class="content">
+                    In 1992, it was ‘Mr Oldani wants you!’ Bruno, a Swiss immigrant to Norway in the late 1950s, invited AGI to celebrate its 40th birthday with a congress in Oslo. In mid-May, it was spring in the Norwegian capital, where they were eager to show us the profession from a Scandinavian perspective. High above Oslo, on the ski slopes, lies Holmenkollen, with a large hotel complex where AGI was accommodated. Oldani’s always-cheerful (and, I have to add, un-Swiss) approach to visual communication set the tone, with printed matter and T-shirts. The participants were asked to design a postcard on the theme of AGI 40. It turned out to be a colourful collection of mini-posters.President Rolf Müller looked back on 40 years of the AGI. Jean Widmer talked about Roman Cieslewicz and visual design for public affairs. David Hillman showed his redesign for The Guardian. Karl Domenic Geissbühler presented his opera posters and spoke of the problems of sponsorship. There followed a sightseeing tour of Oslo. The second congress day was devoted to Scandinavia. Jazz, the face of Norway, Ellinor’s fashion show, the design for the 1994 Lillehammer Winter Games, illustrators. The Dane Per Mollerup discussed the ‘arguments of design’. Birgitta Capetillo of the Danish Design Centre showed her country’s graphic design. Kyösti Varis demonstrated Finnish design, with the familiar ‘slides without words’. Kit Hinrichs highlighted the cultural influences of Californian design. One morning, we went and waved to the Norwegian king on the steps of his palace, on his birthday, met the Lapps (and immediately understood where Bruno gets his primary palette from). The illustrators and students held an open house. And I can say nothing but good things about all the delicacies of Holmenkollen’s cuisine: once more, it was a real Alliance Gastronomique Internationale.
+                </div>
+                <a href="#frame1"><div class="arrow"><</div></a>
+                <a href="#frame3"><div class="arrow">></div></a>
+	       </div>
+        </div>
+            
+        <div id="frame3" class="transparency">
+            <div class="frame">
+                <h2>1993 : New York</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-50px " src="img/1990s/1990-3.jpeg">
+                </div>
+                <div class="content">
+                     In 1993 Montauk was the venue. For Americans, it is such a household word that they did not think to tell us how to get to that remote corner of Long Island. Not that you can simply get a train there, for example. The Atlantic Coast, almost in New England style. Endless rows of holiday palaces and weekend houses for New Yorkers. The congress had the appropriate salty taste. We stayed at the Montauk Yacht Club, sailed on the waters at sunset, watched 20,000 Leagues Under the Sea. We ‘constructed’ our own fish out of beachcombing finds, wire and pieces of cloth. Armando Milani presented his Double Life book, on the secret lives of AGI members. There was a visit to an exhibition on the designer/teacher Josef Albers. Richard Hess, Jackie Casey, Max Huber and Bernard Villemot were all commemorated in a silent slide show.
+
+Paul Rand acted as the critical teacher. A highly spectacular part of the programme was the theatre/fashion show by Oscar-winner Eiko Ishioka. This was followed by a round trip around and inside unique houses on the coast of Long Island. AIGA New York organized a presentation at Cooper Union by Ken Cato, Shigeo Fukuda, Werner Jeker, Pierre Mendell and Bruno Oldani.In 1993, AGI again held an exhibition in New York.
+                </div>
+                <a href="#frame2"><div class="arrow"><</div></a>
+                <a href="#frame4"><div class="arrow">></div></a>
+	       </div>
+                
+        </div>    
+           <div id="frame4" class="transparency">
+            <div class="frame">
+                <h2>1994 : London</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-50px " src="img/1990s/1990-4.jpeg">
+                </div>
+                <div class="content">
+                    In 1994, the university town of Cambridge received AGI at an academic level! For the occasion, the members were invited to express something of their humour on a postcard. These were bundled together into a thick paperback full of splendid fun, under the title Humour is a Serious Thing. A sad coincidence: the ‘minimalist’ cartoonist Mel Calman, who had just become president of AGI Great Britain and the man behind the book, had died in the run-up to this congress. Henry Steiner wrote: ‘Mel’s ghost would have been amused by the fuss he caused when he died instantly from a heart attack while watching a film in a West End cinema.’ Michael Rand talked about Mel at the congress. The Garden House Hotel on the river Cam was capable of accommodating the entire, rather modest, party. Cambridge lived up to its reputation 100 percent: the wonderful colleges and their grounds, the punts, the omnipresent students, the pubs, the teas, the English breakfasts and the charming rural surroundings. The town offered a great book market and you could have yourself measured for a lawyer’s wig or a college tie.Muriel Cooper presented ‘Flying Through Information’, a virtual space performance by her MIT Media Lab. Then followed the General Assembly, where there were a couple of hard nuts to be cracked. As always, the discussion primarily concerned admission policy and its consequences. Luckily, humour came back in a talk by Peter Brookes and Nick Garland (humour in newspapers) and the presentation by Yarom Vardimon, Pierre Mendell, John McConnell and Italo Lupi on humour in their own countries and a UK advertising guru, John Hegarty. AGI’s latest ‘acquisition’ Roger Law of Spitting Image fitted perfectly with the subject, as did the sponsors Guinness, who like to use humour to present their beer. David Gentleman presented ‘The Kite and the Sting’. We sat in the gothic choir stalls of Trinity College chapel, listening to sacred music and taking a moment to remember Mel Calman. We dined in veritable academic style, by candlelight in Downing College. Well and truly ‘warmed’ we returned home, to answer the call of waiting work.
+
+In 1994, an AGI Young Professional Seminar was held in London.That year saw the passing of Jacques Richez, the eminent and highly respected AGI member whose contribution to AGI and his (unfortunately rather fruitless) struggle for a better design climate in his native Belgium is unforgettable. He once advertised in a Belgian newspaper: ‘Serious designer seeks talented client.’ Gilles Fiszman, compatriot and friend, spoke about this exceptionally valuable AGI pioneer at the next congress.
+                </div>
+                <a href="#frame3"><div class="arrow"><</div></a>
+                <a href="#frame5"><div class="arrow">></div></a>
+	       </div>    
+        </div> 
+               
+        </div>    
+           <div id="frame5" class="transparency">
+            <div class="frame">
+                <h2>1995 : the Tyrrhenian Sea</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-50px " src="img/1990s/1990-5.jpeg">
+                </div>
+                <div class="content">
+                    Amalfi, by the Tyrrhenian Sea, to the south of Naples, Vesuvius, Pompeii and Capri. What a fantastic location for AGI 1995! A sun-drenched coastal town, with its back against the mountains. AGI gathered in the port of Naples and sailed to Amalfi, which dates back to the 10th and 11th centuries. The almost 120(!) guests were housed in various lodgings, partly with a view to their budgets. We were asked to bring a design for a pizza, not round, but 40 x 40 cm. Was this perhaps a vague intimation of the future of Italian cucina? It was a real shame that the Italian AGI members had stayed at home in their droves. The actual congress took place in the Arsenale, a historic ruin near the harbour, with great vaulted domes and, unfortunately, just too much daylight to do justice to projection. A gentleman from the Bodoni museum in Parma greeted us warmly, only to inform us that it’s actually impossible to get into. The rest of the programme included a discussion between the generations, between the digi-nitwits, the designosaurs and the young ones, the computer generation. Massimo Vignelli and April Greiman in the boxing ring, partly as a result of a controversial letter from Paula Scher that should never have been printed. Meanwhile, a spontaneous ‘questionnaire’ among the audience was unable to lie: the majority of the AGI members present belonged to the digi-nitwit brigade. AGI was threatening, as in the early 1960s, to become an AGeing I, a bulwark of self-important, rather elderly elitists. And then it was time for lunch...
+                </div>
+                <a href="#frame4"><div class="arrow"><</div></a>
+                <a href="#frame6"><div class="arrow">></div></a>
+	       </div>    
+        </div> 
+               
+        </div>    
+           <div id="frame6" class="transparency">
+            <div class="frame">
+                <h2>1998</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-50px " src="img/1990s/1990-6.jpeg">
+                </div>
+                <div class="content">
+                    We visited a delightful local paper-maker’s. Some people hired a car and drove to Paestum, where they spent an enjoyable afternoon at the ancient temple ruins and on the winding coastal road.One evening was spent at sea. The fishermen took us to their far-off fishing grounds where, by the light of the moon, they cooked fish and chips on board, which we washed down with the local wine. The customary AGI official photo was taken on the high steps of Amalfi Cathedral. The following year, the AGI took a sabbatical from its series of congresses. For contemplation, perhaps?More sadness: within the space of six months, we lost a number of prominent AGI members: Jock Kinneir, Roberto Sambonet, Bradbury Thompson, Walter Herdeg. Gérard Miedinger, Roman Cieslewicz and Kurt Wirth. There was a worthy commemoration in the AGI Letter 5/6.In 1997, it was Europe again: AGI in Barcelona. Spanish temperament, in the highly capable hands of Javier Mariscal and Pedro ‘Peret’ Torrent. The fabulous city played the major role (although there were criminal touches here and there, as a number of light-fingered locals helped themselves to quite a few things). But what brilliance, what energy and what creativity we were treated to. The welcome dinner was held in a lively restaurant, Hivernacle, on the completely renovated quay. The congress commenced with a presentation on Spanish culture and design. In the evening, we moved to Peret’s big studio. The studio was an almost theatrical revelation, as good as the work he showed. ‘Airs of Spain’ entertained us with live music. The next day was AGI day: the assembly and the presentation of new members. A new board also took up its role: Ken Cato, David Hillman, Jean Robert, Ruedi Rüegg, Laurence Madrelle and Uwe Loesch. These IEC members were allotted their own ‘ministries’.The evening started with ‘The Incredible Magic Bus Tour’. The tour of the city was linked to all kinds of pieces of street theatre, mini operas, fake bullfights and acrobatics. Gaudi received a generous amount of attention, with his Sagrada Familia and the Parc Güell, where we were treated to a surprising concert and fireworks once the sun had made way for the moon. Dinner was on the mountainside.The following morning, Ruedi Baur, George Hardie, Lars Müller and Paula Scher got us to look to the future, ‘Inventing the Next Century’. In the evening, the coach took us to the equally vast Estudio Mariscal, where the young maestro delighted us with his cinematic presentation, ‘The History of Colours’. His often exuberant work bears a very clear signature. The recent AGI acquisitions, Peret and Mariscal, immediately won the hearts of all their colleagues. The farewell party at an industrial site was a whirl of dancing, acrobatics, theatre, lights, fire, music, food and drink: an overwhelming, unforgettable experience for all the senses. Barcelona set some great AGI records. AGI also unveiled its own ‘Oscar’ award, named the ‘Henri’, a typical Peret creation, intended to be awarded annually to members of extraordinary merit. Two were immediately promised in the presence of Henrion’s widow, Marion: one for the co-founder Jacques Nathan Garamond and one for Pieter Brattinga (which I later handed to him in Amsterdam during a private viewing at his Print Gallery).The selection committee for new members in Barcelona (1997) received nominations for no fewer than 80 candidates. Even more astounding is that 50 of them were accepted. If you look at the list of names, it is a qualitatively impressive company (see AGI Letter #9 of September 1997). Surely it can’t be that the 50 from 1997 were flukes? In 1998, too, there were more than 80 candidates and these generated 47 new members. Agitate in March 1999 again demonstrated a solid level of quality.In 1997 seven prominent French designers wrote a very concerned letter in the AGI Letter (#9). They wondered what was left of the ideals and intentions of the AGI founding fathers. ‘The history of design is difficult to write. Has it developed independently from history: fascism/socialism/world war/Cold War/fall of totalitarian socialism/triumph of the international financial capitalism?’ ‘What should be our values as designers today’ and ‘What to do and what to teach?’ We do design to commemorate Hiroshima, to celebrate human rights, to fight child labour and child abuse, to guard against the mistreatment of prisoners, but those are still the proverbial drops in the ocean. We are now 10 years further on and the right answers have still not been given. Certainly, the gap between the insatiable ‘haves’ and the ‘have-nots’ has widened enormously. There would appear to be no suppressing the greed and the urge to flaunt. Some have two-million-Euro cars, pimped up for the same amount again... and some have daily wages of something like $1 or less. The themes of AGI Toronto 1998 were ‘Confrontation, Collaboration and Congregation’, with the emphasis on the first. A city of 4.5 million people, dubbed by Peter Ustinov ‘New York run by the Swiss’. The welcome reception was in the Design Exchange (DX), a landmark from the 1930s. Readings and discussions were on the agenda for the second day. A mixture of AGI members, other designers, architects, artists, musicians and people from the theatre world. More confrontations and debates on day 3, when an exhibition of Canadian postage stamps by AGI members also opened. A culinary tour and jazz concluded the day. The final AGI day was reserved for the assembly and the dinner dance.
+                </div>
+                <a href="#frame5"><div class="arrow"><</div></a>
+                <a href="#frame7"><div class="arrow">></div></a>
+	       </div>    
+        </div> 
+               
+        </div>    
+           <div id="frame7" class="transparency">
+            <div class="frame">
+                <h2>1999 : Pontresina</h2>
+                <a class="close" href="#">×</a>
+                <div class="frameimg">
+                    <img style="border-radius:0; border:0; width:30vw; margin-top:-50px " src="img/1990s/1990-7.jpeg">
+                </div>
+                <div class="content">
+                    1999: AGI in Pontresina, Switzerland. 300 students attended the symposium held in Zürich’s Art Museum prior to the congress. Bülent Erkmen (Turkey), Irma Boom (The Netherlands), Makoto Saito (Japan), James Victore, Stefan Sagmeister and Dana Arnett were received by an enthusiastic audience. We then travelled on to Pontresina in Oberengadin. It was a gathering of unprecedented size: some 170 participants, including a remarkable number of new­comers. Not so surprising in itself, as the selection procedure in Barcelona had approved no fewer than 50 new members from a candidate list of 80! Hotel Saraz Pontresina houses the ‘Rondo’, a new congress centre built from steel and glass with an unimpaired view of the magnificent snowy mountaintops. It was there that the presentation and discussions were held. The poster exhibition had been set up in the grounds in front of the building. The theme for the piece to bring along was this time a (loose-leaf) 4 Letter Poetry Book. Coffee breaks to catch up with news and look at the pieces we had all brought. After lunch, the coach took us to the Maloja Pass, to the house of the painter, sculptor and poster artist Giovanni Giacometti and his sons Alberto and Diego. Reception in the oldest (former) hotel in the area. Ancient and modern music: a frequent element of this AGI congress, ‘orchestrated’ by Niklaus Troxler, mostly on traditional instruments. The hotel’s wonderful indoor pool was a great place for long-remembered, moving conversations. On Friday afternoon, the coach took us to the foot of the cable-lift to the Diavolezza glacier, at 3,000 m. A mountain camel and three llamas awaited us at the mountain hut. Four Alp horns ‘vied’ with a saxophonist.There was a presentation by Jörg Zintzmeyer on the design of the new Swiss banknotes and corporate design – about which we like to think that we ourselves know something. Anne-Marie Sauvage, curator of the Bibliothèque Nationale de France, talked about the AGI archive it houses. All this was accompanied by excellent food and drink. The General Assembly, on the last day, was primarily devoted to commemorating the many old and even young friends we had seen leave us: Anton Stankowski, Georges Calame, Franco Grignani, Takashi Kono, Giovanni Pintori. Rick Eiber, AGI founder and lecturer Donald Brun, Gene Federico, plus Tibor Kalman and P. Scott Makela. A sad list. It was a time of constant partings. The last dance on the final evening and tears over breakfast.After a long series of not-too-pretentious AGI Bulletins and Newsletters, suddenly we had AGITATE, the richly illustrated and beautifully designed newsletter devised by Pentagram’s David Hillman. Lots of news, good reports and high-quality articles, such as the one on ‘Alerting the minds of young designers’ (prompted by the AGIdeas 10th conference in Australia) and an alarming look by Edo Smitshuijzen at the lack of ideals and the role of design in today’s chaotic world. And, in an earlier issue, a cri-de-coeur from Pierre Bernard. To quote just one line of his: ‘If we want a really international AGI, we must remember that the major part of the world is not that of easy consumerism but rather a planet that is paralysed by troubles where most people suffer far too much to live in harmony.’ Alas, Agitate came all too rarely through the letterbox.
+                </div>
+                <a href="#frame6"><div class="arrow"><</div></a>
+	       </div>    
+        </div>
+               
+    </body>
+
+
+    <script>
+        var box = document.getElementById('box');
+        var imageFirst = document.getElementById('imageFirst');
+
+        var mDown = false;
+        var onMouseDown = function(e) {
+            if(e.target === imageFirst) {
+                mDown = true; 
+                imageFirst.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp = function(e) {
+            if(e.target === imageFirst) {
+                mDown = false; 
+                imageFirst.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageFirst) {
+                var rect = box.getBoundingClientRect();
+                imageFirst.style.left = (e.pageX - rect.left - 120) + 'px';
+                imageFirst.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+
+        window.addEventListener('mousedown', onMouseDown);
+        window.addEventListener('mouseup', onMouseUp);
+        window.addEventListener('mousemove', onMouseMove);
+        
+        /*-------------------------------------------------*/
+        
+        var imageSecond = document.getElementById('imageSecond');
+        var onMouseDown1 = function(e) {
+            if(e.target === imageSecond) {
+                mDown = true; 
+                imageSecond.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp1 = function(e) {
+            if(e.target === imageSecond) {
+                mDown = false; 
+                imageSecond.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove1 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageSecond) {
+                var rect = box.getBoundingClientRect();
+                imageSecond.style.left = (e.pageX - rect.left - 175) + 'px';
+                imageSecond.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown1);
+        window.addEventListener('mouseup', onMouseUp1);
+        window.addEventListener('mousemove', onMouseMove1);
+        
+        /*-------------------------------------------------*/
+        
+        var imageThird = document.getElementById('imageThird');
+        var onMouseDown2 = function(e) {
+            if(e.target === imageThird) {
+                mDown = true; 
+                imageThird.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp2 = function(e) {
+            if(e.target === imageThird) {
+                mDown = false; 
+                imageThird.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove2 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageThird) {
+                var rect = box.getBoundingClientRect();
+                imageThird.style.left = (e.pageX - rect.left - 175) + 'px';
+                imageThird.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown2);
+        window.addEventListener('mouseup', onMouseUp2);
+        window.addEventListener('mousemove', onMouseMove2);
+        
+        /*-------------------------------------------------*/
+        
+        var imageFourth = document.getElementById('imageFourth');
+        var onMouseDown3 = function(e) {
+            if(e.target === imageFourth) {
+                mDown = true; 
+                imageFourth.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp3 = function(e) {
+            if(e.target === imageFourth) {
+                mDown = false; 
+                imageFourth.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove3 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageFourth) {
+                var rect = box.getBoundingClientRect();
+                imageFourth.style.left = (e.pageX - rect.left - 175) + 'px';
+                imageFourth.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown3);
+        window.addEventListener('mouseup', onMouseUp3);
+        window.addEventListener('mousemove', onMouseMove3);
+        
+        /*-------------------------------------------------*/
+        
+        var imageFifth = document.getElementById('imageFifth');
+        var onMouseDown4 = function(e) {
+            if(e.target === imageFifth) {
+                mDown = true; 
+                imageFifth.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp4 = function(e) {
+            if(e.target === imageFifth) {
+                mDown = false; 
+                imageFifth.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove4 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageFifth) {
+                var rect = box.getBoundingClientRect();
+                imageFifth.style.left = (e.pageX - rect.left - 175) + 'px';
+                imageFifth.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown4);
+        window.addEventListener('mouseup', onMouseUp4);
+        window.addEventListener('mousemove', onMouseMove4);
+        
+        /*-------------------------------------------------*/
+        
+        var imageSixth = document.getElementById('imageSixth');
+        var onMouseDown5 = function(e) {
+            if(e.target === imageSixth) {
+                mDown = true; 
+                imageSixth.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp5 = function(e) {
+            if(e.target === imageSixth) {
+                mDown = false; 
+                imageSixth.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove5 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageSixth) {
+                var rect = box.getBoundingClientRect();
+                imageSixth.style.left = (e.pageX - rect.left - 175) + 'px';
+                imageSixth.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown5);
+        window.addEventListener('mouseup', onMouseUp5);
+        window.addEventListener('mousemove', onMouseMove5);
+        
+        /*-------------------------------------------------*/
+        
+        var imageSeventh = document.getElementById('imageSeventh');
+        var onMouseDown6 = function(e) {
+            if(e.target === imageSeventh) {
+                mDown = true; 
+                imageSeventh.style.zIndex=1;
+            }
+        console.log('down');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseUp6 = function(e) {
+            if(e.target === imageSeventh) {
+                mDown = false; 
+                imageSeventh.style.zIndex=0;
+        }
+        console.log('up');
+        console.log(e.pageX, e.pageY);
+        };
+
+        var onMouseMove6 = function(e) {
+            //console.log('move');
+            //console.log(e.pageX, e.pageY);
+            if(mDown && e.target === imageSeventh) {
+                var rect = box.getBoundingClientRect();
+                imageSeventh.style.left = (e.pageX - rect.left - 175) + 'px';
+                imageSeventh.style.top = (e.pageY - rect.top - 100) + 'px'; 
+            }
+        };
+        
+        window.addEventListener('mousedown', onMouseDown6);
+        window.addEventListener('mouseup', onMouseUp6);
+        window.addEventListener('mousemove', onMouseMove6);
+    </script>
+</html>
